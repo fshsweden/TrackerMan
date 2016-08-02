@@ -1,0 +1,1 @@
+curl -d player[name]=Kalle -d player[lat]=1 -d player[lng]=2 http://localhost:3000/api/update_position

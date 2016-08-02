@@ -1,0 +1,6 @@
+framework module Pods_Trackerman {
+  umbrella header "Pods-Trackerman-umbrella.h"
+
+  export *
+  module * { export * }
+}

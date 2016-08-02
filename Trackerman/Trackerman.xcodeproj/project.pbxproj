@@ -1,0 +1,724 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16954CF31D4E9A4F00D59223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF21D4E9A4F00D59223 /* AppDelegate.swift */; };
+		16954CF51D4E9A4F00D59223 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF41D4E9A4F00D59223 /* FirstViewController.swift */; };
+		16954CF71D4E9A4F00D59223 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF61D4E9A4F00D59223 /* SecondViewController.swift */; };
+		16954CFA1D4E9A4F00D59223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16954CF81D4E9A4F00D59223 /* Main.storyboard */; };
+		16954CFC1D4E9A4F00D59223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16954CFB1D4E9A4F00D59223 /* Assets.xcassets */; };
+		16954CFF1D4E9A4F00D59223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16954CFD1D4E9A4F00D59223 /* LaunchScreen.storyboard */; };
+		16954D0A1D4E9A4F00D59223 /* TrackermanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D091D4E9A4F00D59223 /* TrackermanTests.swift */; };
+		16954D151D4E9A4F00D59223 /* TrackermanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D141D4E9A4F00D59223 /* TrackermanUITests.swift */; };
+		16954D231D4E9AA600D59223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16954D221D4E9AA600D59223 /* MapKit.framework */; };
+		16954D2B1D4F423500D59223 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D2A1D4F423500D59223 /* LocationManager.swift */; };
+		3E7C0F04FD1EE9556C4DF3EA /* Pods_TrackermanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6ED4E1854463814E7C5E8A /* Pods_TrackermanTests.framework */; };
+		908DAAD7E2B97C5A56D14414 /* Pods_Trackerman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8343FAD4ED4DEF4D499300E5 /* Pods_Trackerman.framework */; };
+		9490C08A38F1D8DEF1E48550 /* Pods_TrackermanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D07A3FD470F9BEA20C0CD83 /* Pods_TrackermanUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16954D061D4E9A4F00D59223 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16954CE71D4E9A4F00D59223 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16954CEE1D4E9A4F00D59223;
+			remoteInfo = Trackerman;
+		};
+		16954D111D4E9A4F00D59223 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16954CE71D4E9A4F00D59223 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16954CEE1D4E9A4F00D59223;
+			remoteInfo = Trackerman;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DFBCAA6A1E552F963BB4296 /* Pods-Trackerman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackerman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trackerman/Pods-Trackerman.debug.xcconfig"; sourceTree = "<group>"; };
+		16954CEF1D4E9A4F00D59223 /* Trackerman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackerman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16954CF21D4E9A4F00D59223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16954CF41D4E9A4F00D59223 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		16954CF61D4E9A4F00D59223 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		16954CF91D4E9A4F00D59223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16954CFB1D4E9A4F00D59223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16954CFE1D4E9A4F00D59223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		16954D001D4E9A4F00D59223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16954D051D4E9A4F00D59223 /* TrackermanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackermanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16954D091D4E9A4F00D59223 /* TrackermanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackermanTests.swift; sourceTree = "<group>"; };
+		16954D0B1D4E9A4F00D59223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16954D101D4E9A4F00D59223 /* TrackermanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackermanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16954D141D4E9A4F00D59223 /* TrackermanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackermanUITests.swift; sourceTree = "<group>"; };
+		16954D161D4E9A4F00D59223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16954D221D4E9AA600D59223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		16954D241D4F409100D59223 /* LocationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationManager.framework; path = "../../../Library/Developer/Xcode/DerivedData/Trackerman-fxanzhbqqunmtsdfrxtfglzbunli/Build/Products/Debug-iphonesimulator/LocationManager/LocationManager.framework"; sourceTree = "<group>"; };
+		16954D261D4F40FB00D59223 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Trackerman-fxanzhbqqunmtsdfrxtfglzbunli/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
+		16954D281D4F410300D59223 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = "Pods/../build/Debug-iphoneos/OMGHTTPURLRQ/OMGHTTPURLRQ.framework"; sourceTree = "<group>"; };
+		16954D2A1D4F423500D59223 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2D07A3FD470F9BEA20C0CD83 /* Pods_TrackermanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackermanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B612D88AAEF823DEB2FDB1 /* Pods-TrackermanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackermanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackermanTests/Pods-TrackermanTests.release.xcconfig"; sourceTree = "<group>"; };
+		8343FAD4ED4DEF4D499300E5 /* Pods_Trackerman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trackerman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6ED4E1854463814E7C5E8A /* Pods_TrackermanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackermanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C816FC290F6E250996FB96B4 /* Pods-Trackerman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackerman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trackerman/Pods-Trackerman.release.xcconfig"; sourceTree = "<group>"; };
+		F2D505854BEDF1AE6EC82C0B /* Pods-TrackermanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackermanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackermanUITests/Pods-TrackermanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3CFE2E91AEEE38FDAFC7EAC /* Pods-TrackermanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackermanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackermanUITests/Pods-TrackermanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF3BC0611750BC5AB8F0D77A /* Pods-TrackermanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackermanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackermanTests/Pods-TrackermanTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16954CEC1D4E9A4F00D59223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16954D231D4E9AA600D59223 /* MapKit.framework in Frameworks */,
+				908DAAD7E2B97C5A56D14414 /* Pods_Trackerman.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D021D4E9A4F00D59223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E7C0F04FD1EE9556C4DF3EA /* Pods_TrackermanTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D0D1D4E9A4F00D59223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9490C08A38F1D8DEF1E48550 /* Pods_TrackermanUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16954CE61D4E9A4F00D59223 = {
+			isa = PBXGroup;
+			children = (
+				16954D221D4E9AA600D59223 /* MapKit.framework */,
+				16954CF11D4E9A4F00D59223 /* Trackerman */,
+				16954D081D4E9A4F00D59223 /* TrackermanTests */,
+				16954D131D4E9A4F00D59223 /* TrackermanUITests */,
+				16954CF01D4E9A4F00D59223 /* Products */,
+				ABBD53D0423DA33FDB2F7FAC /* Pods */,
+				4170B9C16CE829A652CDEDBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		16954CF01D4E9A4F00D59223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16954CEF1D4E9A4F00D59223 /* Trackerman.app */,
+				16954D051D4E9A4F00D59223 /* TrackermanTests.xctest */,
+				16954D101D4E9A4F00D59223 /* TrackermanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16954CF11D4E9A4F00D59223 /* Trackerman */ = {
+			isa = PBXGroup;
+			children = (
+				16954CF21D4E9A4F00D59223 /* AppDelegate.swift */,
+				16954CF41D4E9A4F00D59223 /* FirstViewController.swift */,
+				16954CF61D4E9A4F00D59223 /* SecondViewController.swift */,
+				16954CF81D4E9A4F00D59223 /* Main.storyboard */,
+				16954CFB1D4E9A4F00D59223 /* Assets.xcassets */,
+				16954CFD1D4E9A4F00D59223 /* LaunchScreen.storyboard */,
+				16954D001D4E9A4F00D59223 /* Info.plist */,
+				16954D2A1D4F423500D59223 /* LocationManager.swift */,
+			);
+			path = Trackerman;
+			sourceTree = "<group>";
+		};
+		16954D081D4E9A4F00D59223 /* TrackermanTests */ = {
+			isa = PBXGroup;
+			children = (
+				16954D091D4E9A4F00D59223 /* TrackermanTests.swift */,
+				16954D0B1D4E9A4F00D59223 /* Info.plist */,
+			);
+			path = TrackermanTests;
+			sourceTree = "<group>";
+		};
+		16954D131D4E9A4F00D59223 /* TrackermanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				16954D141D4E9A4F00D59223 /* TrackermanUITests.swift */,
+				16954D161D4E9A4F00D59223 /* Info.plist */,
+			);
+			path = TrackermanUITests;
+			sourceTree = "<group>";
+		};
+		4170B9C16CE829A652CDEDBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16954D281D4F410300D59223 /* OMGHTTPURLRQ.framework */,
+				16954D261D4F40FB00D59223 /* PromiseKit.framework */,
+				16954D241D4F409100D59223 /* LocationManager.framework */,
+				8343FAD4ED4DEF4D499300E5 /* Pods_Trackerman.framework */,
+				9C6ED4E1854463814E7C5E8A /* Pods_TrackermanTests.framework */,
+				2D07A3FD470F9BEA20C0CD83 /* Pods_TrackermanUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABBD53D0423DA33FDB2F7FAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DFBCAA6A1E552F963BB4296 /* Pods-Trackerman.debug.xcconfig */,
+				C816FC290F6E250996FB96B4 /* Pods-Trackerman.release.xcconfig */,
+				FF3BC0611750BC5AB8F0D77A /* Pods-TrackermanTests.debug.xcconfig */,
+				69B612D88AAEF823DEB2FDB1 /* Pods-TrackermanTests.release.xcconfig */,
+				F3CFE2E91AEEE38FDAFC7EAC /* Pods-TrackermanUITests.debug.xcconfig */,
+				F2D505854BEDF1AE6EC82C0B /* Pods-TrackermanUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16954CEE1D4E9A4F00D59223 /* Trackerman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16954D191D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "Trackerman" */;
+			buildPhases = (
+				1E039AA81092313F536140F6 /* [CP] Check Pods Manifest.lock */,
+				16954CEB1D4E9A4F00D59223 /* Sources */,
+				16954CEC1D4E9A4F00D59223 /* Frameworks */,
+				16954CED1D4E9A4F00D59223 /* Resources */,
+				4C63FF75A2CE92A93560595C /* [CP] Embed Pods Frameworks */,
+				B5F5B4F6348232B191535C2E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trackerman;
+			productName = Trackerman;
+			productReference = 16954CEF1D4E9A4F00D59223 /* Trackerman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16954D041D4E9A4F00D59223 /* TrackermanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16954D1C1D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "TrackermanTests" */;
+			buildPhases = (
+				DEA69BDA6C811F7A770746BD /* [CP] Check Pods Manifest.lock */,
+				16954D011D4E9A4F00D59223 /* Sources */,
+				16954D021D4E9A4F00D59223 /* Frameworks */,
+				16954D031D4E9A4F00D59223 /* Resources */,
+				855A0349471BC49CF0F61A4E /* [CP] Embed Pods Frameworks */,
+				D1413869A7C5940FF014987D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16954D071D4E9A4F00D59223 /* PBXTargetDependency */,
+			);
+			name = TrackermanTests;
+			productName = TrackermanTests;
+			productReference = 16954D051D4E9A4F00D59223 /* TrackermanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		16954D0F1D4E9A4F00D59223 /* TrackermanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16954D1F1D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "TrackermanUITests" */;
+			buildPhases = (
+				7A9084C66B2C01AAEBC19C37 /* [CP] Check Pods Manifest.lock */,
+				16954D0C1D4E9A4F00D59223 /* Sources */,
+				16954D0D1D4E9A4F00D59223 /* Frameworks */,
+				16954D0E1D4E9A4F00D59223 /* Resources */,
+				09CD1C85355713D9B03DFEB9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16954D121D4E9A4F00D59223 /* PBXTargetDependency */,
+			);
+			name = TrackermanUITests;
+			productName = TrackermanUITests;
+			productReference = 16954D101D4E9A4F00D59223 /* TrackermanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16954CE71D4E9A4F00D59223 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Peter Andersson";
+				TargetAttributes = {
+					16954CEE1D4E9A4F00D59223 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9UN5M89MCE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					16954D041D4E9A4F00D59223 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9UN5M89MCE;
+						TestTargetID = 16954CEE1D4E9A4F00D59223;
+					};
+					16954D0F1D4E9A4F00D59223 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9UN5M89MCE;
+						TestTargetID = 16954CEE1D4E9A4F00D59223;
+					};
+				};
+			};
+			buildConfigurationList = 16954CEA1D4E9A4F00D59223 /* Build configuration list for PBXProject "Trackerman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16954CE61D4E9A4F00D59223;
+			productRefGroup = 16954CF01D4E9A4F00D59223 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16954CEE1D4E9A4F00D59223 /* Trackerman */,
+				16954D041D4E9A4F00D59223 /* TrackermanTests */,
+				16954D0F1D4E9A4F00D59223 /* TrackermanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16954CED1D4E9A4F00D59223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16954CFF1D4E9A4F00D59223 /* LaunchScreen.storyboard in Resources */,
+				16954CFC1D4E9A4F00D59223 /* Assets.xcassets in Resources */,
+				16954CFA1D4E9A4F00D59223 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D031D4E9A4F00D59223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D0E1D4E9A4F00D59223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09CD1C85355713D9B03DFEB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackermanUITests/Pods-TrackermanUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E039AA81092313F536140F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C63FF75A2CE92A93560595C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trackerman/Pods-Trackerman-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A9084C66B2C01AAEBC19C37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		855A0349471BC49CF0F61A4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackermanTests/Pods-TrackermanTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5F5B4F6348232B191535C2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trackerman/Pods-Trackerman-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1413869A7C5940FF014987D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackermanTests/Pods-TrackermanTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEA69BDA6C811F7A770746BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16954CEB1D4E9A4F00D59223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16954D2B1D4F423500D59223 /* LocationManager.swift in Sources */,
+				16954CF71D4E9A4F00D59223 /* SecondViewController.swift in Sources */,
+				16954CF31D4E9A4F00D59223 /* AppDelegate.swift in Sources */,
+				16954CF51D4E9A4F00D59223 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D011D4E9A4F00D59223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16954D0A1D4E9A4F00D59223 /* TrackermanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16954D0C1D4E9A4F00D59223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16954D151D4E9A4F00D59223 /* TrackermanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16954D071D4E9A4F00D59223 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16954CEE1D4E9A4F00D59223 /* Trackerman */;
+			targetProxy = 16954D061D4E9A4F00D59223 /* PBXContainerItemProxy */;
+		};
+		16954D121D4E9A4F00D59223 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16954CEE1D4E9A4F00D59223 /* Trackerman */;
+			targetProxy = 16954D111D4E9A4F00D59223 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16954CF81D4E9A4F00D59223 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16954CF91D4E9A4F00D59223 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16954CFD1D4E9A4F00D59223 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16954CFE1D4E9A4F00D59223 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16954D171D4E9A4F00D59223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16954D181D4E9A4F00D59223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16954D1A1D4E9A4F00D59223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DFBCAA6A1E552F963BB4296 /* Pods-Trackerman.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/OMGHTTPURLRQ",
+				);
+				INFOPLIST_FILE = Trackerman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.Trackerman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16954D1B1D4E9A4F00D59223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C816FC290F6E250996FB96B4 /* Pods-Trackerman.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/OMGHTTPURLRQ",
+				);
+				INFOPLIST_FILE = Trackerman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.Trackerman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		16954D1D1D4E9A4F00D59223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3BC0611750BC5AB8F0D77A /* Pods-TrackermanTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrackermanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.TrackermanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackerman.app/Trackerman";
+			};
+			name = Debug;
+		};
+		16954D1E1D4E9A4F00D59223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69B612D88AAEF823DEB2FDB1 /* Pods-TrackermanTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrackermanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.TrackermanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackerman.app/Trackerman";
+			};
+			name = Release;
+		};
+		16954D201D4E9A4F00D59223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CFE2E91AEEE38FDAFC7EAC /* Pods-TrackermanUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TrackermanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.TrackermanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trackerman;
+			};
+			name = Debug;
+		};
+		16954D211D4E9A4F00D59223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2D505854BEDF1AE6EC82C0B /* Pods-TrackermanUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TrackermanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsh.TrackermanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trackerman;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16954CEA1D4E9A4F00D59223 /* Build configuration list for PBXProject "Trackerman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16954D171D4E9A4F00D59223 /* Debug */,
+				16954D181D4E9A4F00D59223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16954D191D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "Trackerman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16954D1A1D4E9A4F00D59223 /* Debug */,
+				16954D1B1D4E9A4F00D59223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16954D1C1D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "TrackermanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16954D1D1D4E9A4F00D59223 /* Debug */,
+				16954D1E1D4E9A4F00D59223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16954D1F1D4E9A4F00D59223 /* Build configuration list for PBXNativeTarget "TrackermanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16954D201D4E9A4F00D59223 /* Debug */,
+				16954D211D4E9A4F00D59223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16954CE71D4E9A4F00D59223 /* Project object */;
+}
