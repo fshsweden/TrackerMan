@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1663EAC71D540BC2002C9E7D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1663EAC61D540BC2002C9E7D /* Request.swift */; };
+		168E97381D51EE4700F46627 /* RestApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E97361D51EE4700F46627 /* RestApiClient.swift */; };
+		168E97391D51EE4700F46627 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E97371D51EE4700F46627 /* SwiftyJSON.swift */; };
 		16954CF31D4E9A4F00D59223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF21D4E9A4F00D59223 /* AppDelegate.swift */; };
 		16954CF51D4E9A4F00D59223 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF41D4E9A4F00D59223 /* FirstViewController.swift */; };
 		16954CF71D4E9A4F00D59223 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954CF61D4E9A4F00D59223 /* SecondViewController.swift */; };
@@ -17,6 +20,10 @@
 		16954D151D4E9A4F00D59223 /* TrackermanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D141D4E9A4F00D59223 /* TrackermanUITests.swift */; };
 		16954D231D4E9AA600D59223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16954D221D4E9AA600D59223 /* MapKit.framework */; };
 		16954D2B1D4F423500D59223 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D2A1D4F423500D59223 /* LocationManager.swift */; };
+		16C78AA51D5B805200B74133 /* Map-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA41D5B805200B74133 /* Map-128.png */; };
+		16C78AA71D5B809A00B74133 /* map-32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA61D5B809A00B74133 /* map-32.jpg */; };
+		16C78AA91D5B80E300B74133 /* map-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA81D5B80E300B74133 /* map-32.png */; };
+		16F816B11D5394FD00FD9F96 /* LocationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F816B01D5394FD00FD9F96 /* LocationEntry.swift */; };
 		3E7C0F04FD1EE9556C4DF3EA /* Pods_TrackermanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6ED4E1854463814E7C5E8A /* Pods_TrackermanTests.framework */; };
 		908DAAD7E2B97C5A56D14414 /* Pods_Trackerman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8343FAD4ED4DEF4D499300E5 /* Pods_Trackerman.framework */; };
 		9490C08A38F1D8DEF1E48550 /* Pods_TrackermanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D07A3FD470F9BEA20C0CD83 /* Pods_TrackermanUITests.framework */; };
@@ -41,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		0DFBCAA6A1E552F963BB4296 /* Pods-Trackerman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackerman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trackerman/Pods-Trackerman.debug.xcconfig"; sourceTree = "<group>"; };
+		1663EAC61D540BC2002C9E7D /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		168E97361D51EE4700F46627 /* RestApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiClient.swift; sourceTree = "<group>"; };
+		168E97371D51EE4700F46627 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		16954CEF1D4E9A4F00D59223 /* Trackerman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackerman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16954CF21D4E9A4F00D59223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16954CF41D4E9A4F00D59223 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +70,10 @@
 		16954D261D4F40FB00D59223 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Trackerman-fxanzhbqqunmtsdfrxtfglzbunli/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		16954D281D4F410300D59223 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = "Pods/../build/Debug-iphoneos/OMGHTTPURLRQ/OMGHTTPURLRQ.framework"; sourceTree = "<group>"; };
 		16954D2A1D4F423500D59223 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		16C78AA41D5B805200B74133 /* Map-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Map-128.png"; path = "Assets.xcassets/Map-128.png"; sourceTree = "<group>"; };
+		16C78AA61D5B809A00B74133 /* map-32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "map-32.jpg"; path = "Assets.xcassets/map-32.jpg"; sourceTree = "<group>"; };
+		16C78AA81D5B80E300B74133 /* map-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-32.png"; path = "Assets.xcassets/map-32.png"; sourceTree = "<group>"; };
+		16F816B01D5394FD00FD9F96 /* LocationEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEntry.swift; sourceTree = "<group>"; };
 		2D07A3FD470F9BEA20C0CD83 /* Pods_TrackermanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackermanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B612D88AAEF823DEB2FDB1 /* Pods-TrackermanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackermanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackermanTests/Pods-TrackermanTests.release.xcconfig"; sourceTree = "<group>"; };
 		8343FAD4ED4DEF4D499300E5 /* Pods_Trackerman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trackerman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,14 +139,21 @@
 		16954CF11D4E9A4F00D59223 /* Trackerman */ = {
 			isa = PBXGroup;
 			children = (
+				16C78AA81D5B80E300B74133 /* map-32.png */,
+				168E97361D51EE4700F46627 /* RestApiClient.swift */,
+				168E97371D51EE4700F46627 /* SwiftyJSON.swift */,
 				16954CF21D4E9A4F00D59223 /* AppDelegate.swift */,
 				16954CF41D4E9A4F00D59223 /* FirstViewController.swift */,
 				16954CF61D4E9A4F00D59223 /* SecondViewController.swift */,
 				16954CF81D4E9A4F00D59223 /* Main.storyboard */,
 				16954CFB1D4E9A4F00D59223 /* Assets.xcassets */,
+				16C78AA61D5B809A00B74133 /* map-32.jpg */,
+				16C78AA41D5B805200B74133 /* Map-128.png */,
 				16954CFD1D4E9A4F00D59223 /* LaunchScreen.storyboard */,
 				16954D001D4E9A4F00D59223 /* Info.plist */,
 				16954D2A1D4F423500D59223 /* LocationManager.swift */,
+				16F816B01D5394FD00FD9F96 /* LocationEntry.swift */,
+				1663EAC61D540BC2002C9E7D /* Request.swift */,
 			);
 			path = Trackerman;
 			sourceTree = "<group>";
@@ -304,6 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C78AA51D5B805200B74133 /* Map-128.png in Resources */,
+				16C78AA91D5B80E300B74133 /* map-32.png in Resources */,
+				16C78AA71D5B809A00B74133 /* map-32.jpg in Resources */,
 				16954CFF1D4E9A4F00D59223 /* LaunchScreen.storyboard in Resources */,
 				16954CFC1D4E9A4F00D59223 /* Assets.xcassets in Resources */,
 				16954CFA1D4E9A4F00D59223 /* Main.storyboard in Resources */,
@@ -455,8 +479,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16954D2B1D4F423500D59223 /* LocationManager.swift in Sources */,
+				1663EAC71D540BC2002C9E7D /* Request.swift in Sources */,
 				16954CF71D4E9A4F00D59223 /* SecondViewController.swift in Sources */,
+				16F816B11D5394FD00FD9F96 /* LocationEntry.swift in Sources */,
 				16954CF31D4E9A4F00D59223 /* AppDelegate.swift in Sources */,
+				168E97391D51EE4700F46627 /* SwiftyJSON.swift in Sources */,
+				168E97381D51EE4700F46627 /* RestApiClient.swift in Sources */,
 				16954CF51D4E9A4F00D59223 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +558,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: fshsweden@hotmail.com (2X3S8MVXSC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -552,6 +581,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,6 +606,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: fshsweden@hotmail.com (2X3S8MVXSC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -591,6 +622,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

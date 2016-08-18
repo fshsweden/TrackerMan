@@ -301,6 +301,7 @@
 				168BE7FC1D50AA2300560C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

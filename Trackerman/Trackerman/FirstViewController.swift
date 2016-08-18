@@ -14,13 +14,22 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var myLocation: UILabel!
     
+    var uuid : NSString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Setting up first view!")
+
         // 4) Set location of the map: Fuengirola - Malaga 36.5417° N, 4.6250° W
         // FirstViewController.setMapLocation(mapView: mapView, latitude: 36.548628, longitud: -4.6307649)
+     
+        let uuid = NSUserDefaults.standardUserDefaults().valueForKey("ApplicationIdentifier")!
         
-        startLocationServices()
+        // startLocationServices()
+        // createPlayer()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,5 +67,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
             print(verboseMessage)
         }
     }
+    
+    
+    func createPlayer() {
+        // RestApiClient.sharedInstance.testIt()
+    }
+    
 }
 
