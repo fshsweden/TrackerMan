@@ -1,0 +1,10 @@
+<h1>Showing <%=@player.name%> here </h1>
+
+<%= link_to @player.name %>
+
+<% @player.positions.each do |x| %>
+	<% if x != nil %>
+		<li><%= x.created_at %>,<%= x.lat %>,<%= x.lng %></li>
+	<% end %>
+<% end %>
+

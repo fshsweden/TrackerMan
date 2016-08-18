@@ -1,0 +1,19 @@
+<div class="container">
+
+<div class="sm-col-2"></div>
+
+<div class="sm-col-8">
+<div class="fbbluebox" style="width: 500px;">
+	Here are all the players
+</div>
+        
+<% @players.each do |p| %>
+
+<li><%= link_to p.name, show_player_path(p) %></li>
+
+<% end %>
+
+</div>
+</div>
+<div class="sm-col-2"></div>
+</div>

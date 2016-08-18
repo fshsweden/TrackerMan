@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802135414) do
+ActiveRecord::Schema.define(version: 20160802211044) do
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
+    t.string   "lat"
+    t.string   "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.integer  "player_id"
     t.string   "lat"
     t.string   "lng"
     t.datetime "created_at", null: false
