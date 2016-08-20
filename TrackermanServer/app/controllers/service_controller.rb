@@ -75,6 +75,9 @@ class ServiceController < ApplicationController
 		end
 
 		render json: "OK", :status => 200
+		Pusher.trigger('test_channel', 'my_event', {
+			                             message: 'position added!'
+		                             })
 	end
 
 

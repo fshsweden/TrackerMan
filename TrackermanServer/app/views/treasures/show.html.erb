@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @treasure.name %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @treasure.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @treasure.lng %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @treasure.value %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @treasure.start %>
+</p>
+
+<p>
+  <strong>Stop:</strong>
+  <%= @treasure.stop %>
+</p>
+
+<p>
+  <strong>Num takers:</strong>
+  <%= @treasure.num_takers %>
+</p>
+
+<%= link_to 'Edit', edit_treasure_path(@treasure) %> |
+<%= link_to 'Back', treasures_path %>

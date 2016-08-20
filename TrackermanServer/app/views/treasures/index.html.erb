@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Treasures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Value</th>
+      <th>Start</th>
+      <th>Stop</th>
+      <th>Num takers</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treasures.each do |treasure| %>
+      <tr>
+        <td><%= treasure.name %></td>
+        <td><%= treasure.lat %></td>
+        <td><%= treasure.lng %></td>
+        <td><%= treasure.value %></td>
+        <td><%= treasure.start %></td>
+        <td><%= treasure.stop %></td>
+        <td><%= treasure.num_takers %></td>
+        <td><%= link_to 'Show', treasure %></td>
+        <td><%= link_to 'Edit', edit_treasure_path(treasure) %></td>
+        <td><%= link_to 'Destroy', treasure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Treasure', new_treasure_path %>
