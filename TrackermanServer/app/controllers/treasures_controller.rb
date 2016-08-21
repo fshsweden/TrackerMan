@@ -16,7 +16,10 @@ class TreasuresController < ApplicationController
   # GET /treasures.json
   def index
     @treasures = Treasure.all
-	gon.treasures = Treasure.all
+	  gon.treasures = Treasure.all
+    gon.gold = view_context.image_url("goldbar.jpg")
+    gon.silver = view_context.image_url("silverbar.png")
+
   end
 
   # GET /treasures/1

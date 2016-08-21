@@ -70,13 +70,19 @@
 				'lng': parseFloat(gon.treasures[l].lng)
 			};
 
-			var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+			var gold = gon.gold;
+            var silver = gon.silver;
+
+            console.log(gold);
+            console.log(silver);
+
+            //        'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 
 			var marker = new google.maps.Marker({
 				position: p,
 				map: map,
 				title: gon.treasures[l].name,
-				icon: image
+				icon: gold
 			});
  		}
 
