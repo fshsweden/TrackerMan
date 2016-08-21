@@ -4,8 +4,6 @@ class TreasureMapUpdateJob < ActiveJob::Base
   def perform(*args)
 
 	  # Check all treasures
-	  
-
 
 	  @treasures = Treasure.all
 	  @treasures.each do |t|

@@ -16,6 +16,7 @@ class TreasuresController < ApplicationController
   # GET /treasures.json
   def index
     @treasures = Treasure.all
+	gon.treasures = Treasure.all
   end
 
   # GET /treasures/1
