@@ -29,6 +29,20 @@ class ServiceController < ApplicationController
 		# render :json => { :errors => @contacts.errors.as_json }, :status => 420
 	end
 
+
+
+	#
+	#  PING from a player!
+	#
+
+	def ping_android
+		puts "PING from Android!"
+	end
+
+	def ping
+		add_pos
+	end
+
 	# POST add position to player
 	# arguments:
 
@@ -81,11 +95,30 @@ class ServiceController < ApplicationController
 	end
 
 
+	#
+	#
+	#
+	def get_treasures_within
 
-
-
+		# todo add check!
+		diameter = params[:distance]
+		lat = params[:lat]
+		lng = params[:lng]
+		@treasures = find_treasures_within(lat,lng,@diameter)
+	end
 
 	private
+
+	def find_treasures_within(lat,lng,dist)
+		result = []
+		treasures = Treasure.all
+		treasure.each do |t|
+			if distance(lat,lng,t.lat,t.lng) >= dist
+				result.push(t)
+			end
+		end
+		result
+	end
 
 	def player_params
 		@filtered = params.permit(:name, :age)

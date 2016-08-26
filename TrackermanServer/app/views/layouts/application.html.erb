@@ -9,7 +9,112 @@
 </head>
 <body>
 
-<%= yield %>
+  <!-- NAVIGATION -->
+
+  <nav class="navbar navbar-default">
+
+	<div class="container-fluid">
+
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire  "></span></a>
+	  </div>
+
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+
+		  <li>
+			<%= link_to('Home', root_path) %>
+		  </li>
+
+		  <% if current_user %>
+			  <!-- DROPDOWN MENU 1 -->
+			  <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+
+				  <% @menuitems.each do |key, value| %>
+					  <li>
+						<%= link_to( key,value, :data => {'no-turbolink' => :true}) %>
+					  </li>
+				  <% end %>
+
+				  <!--
+				  <li><a href="#">Action</a></li>
+				  <li><a href="#">Another action</a></li>
+				  <li><a href="#">Something else here</a></li>
+				  <li role="separator" class="divider"></li>
+				  <li><a href="#">Separated link</a></li>
+				  <li role="separator" class="divider"></li>
+				  <li><a href="#">One more separated link</a></li>
+				  -->
+				</ul>
+			  </li>
+		  <% end %>
+
+		</ul>
+
+		<!-- SEARCH BAR -->
+		<% if current_user %>
+			<%= form_tag("/search", method: "get", class: "navbar-form navbar-left") do %>
+				<div class="form-group">
+				  <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
+				</div>
+				<%= submit_tag("Search", class: "btn btn-default") %>
+			<% end %>
+		<% end %>
+
+
+		<!-- LOGIN/LOGOUT -->
+		<ul class="nav navbar-nav navbar-right">
+		  <li>
+			<% if user_signed_in? %>
+				<div class="navbar-btn">
+				  <%= link_to(' Logout', destroy_user_session_path, :method => :delete, :class=>"btn btn-success glyphicon glyphicon-log-out") %>
+				</div>
+			<% else %>
+				<div class="navbar-btn">
+				  <%= link_to('Login', new_user_session_path, :class=>"btn btn-success") %>
+				</div>
+			<% end %>
+		  </li>
+		</ul>
+
+	  </div>
+	  <!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+  </nav>
+
+  <!-- VARIANT1 -->
+  <% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= name == 'notice' ? "info" : "danger" %> fade in">
+		<button class="close" data-dismiss="alert">
+		  ×
+		</button>
+		<i class="fa-fw fa fa-info"></i>
+		<strong><Info><%= name %>!</strong> <%= raw(msg) %>
+	  </div>
+  <% end %>
+
+  <div class="row">
+	<div class="col-xs-1">
+	</div>
+	<div class="col-xs-10">
+
+	  <%= yield %>
+	</div>
+	<div class="col-xs-1">
+	  <%= yield :rightbar %>
+	</div>
+</div>
 
 </body>
 </html>

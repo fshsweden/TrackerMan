@@ -2,9 +2,15 @@
 
 <%= link_to @player.name %>
 
+<% t = Treasure.first %>
+
 <% @player.positions.each do |x| %>
 	<% if x != nil %>
-		<li><%= x.created_at %>,<%= x.lat %>,<%= x.lng %></li>
+		<li><%= local_time(x.created_at,  format: '%Y-%m-%d  %H:%M:%S', class: 'my-time') %> LAT:<%= x.lat %> LONG:<%= x.lng %></li>
+
+    <%   %>
+
+		<li>Distance to <%= t.name %>: <%= distance_between(x.lat.to_f,x.lng.to_f, t.lat.to_f, t.lng.to_f) %></li>
 	<% end %>
 <% end %>
 

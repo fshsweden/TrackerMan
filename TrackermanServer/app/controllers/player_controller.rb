@@ -1,7 +1,8 @@
 class PlayerController < ApplicationController
 	
 	def index
-		@players = Player.all		
+		@recent_players = Player.where("login_time > ?", 1.hour.ago)
+		@players = Player.where("login_time <= ?", 1.hour.ago)
 	end
 
 	def show
