@@ -125,7 +125,14 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
         
     }
     
-    func startUpdatingLocationWithCompletionHandler(completionHandler:((latitude:Double, longitude:Double, status:String, verboseMessage:String, error:String?)->())? = nil){
+    func startUpdatingLocationWithCompletionHandler(
+            completionHandler:
+                (
+                    (
+                        latitude:Double, longitude:Double, status:String, verboseMessage:String, error:String?
+                    ) -> ()
+                )? = nil)
+    {
         
         self.completionHandler = completionHandler
         

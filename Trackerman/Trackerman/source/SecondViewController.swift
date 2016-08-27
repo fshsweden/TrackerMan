@@ -42,6 +42,8 @@ public class SecondViewController: UIViewController, CLLocationManagerDelegate, 
     var locationManager: CLLocationManager = CLLocationManager()
     var startLocation: CLLocation! // implicitly unwrapped Optional!
     
+    var game : Game = Game()
+    
     /*
      Structure - Dictionary <String -> Dictionary<String,String>>
      
@@ -211,6 +213,8 @@ public class SecondViewController: UIViewController, CLLocationManagerDelegate, 
         // distance.text = String(format: "%.2f", distanceBetween)
         
         centerMapOnLocation2(latestLocation.coordinate.latitude, longitude: latestLocation.coordinate.longitude)
+        
+
     }
     
     public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

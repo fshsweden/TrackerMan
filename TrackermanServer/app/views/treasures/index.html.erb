@@ -39,6 +39,12 @@
 <%= link_to 'New Treasure', new_treasure_path %>
 
 
+
+
+
+<!-- Uses gem GON to communicate variables between RAILS and JS -->
+<!-- See TreasureController, specificallty "gon.treasures = Treasure.all" -->
+
 <div id="map"></div>
 <div id="demo"></div>
 
@@ -53,6 +59,7 @@
 	function initMap() {
 		var myLatLng = {lat: 60.644, lng: 17.000};
 
+		/* CREATE A MAP! */
 		var mapDiv = document.getElementById('map');
 		var map = new google.maps.Map(mapDiv, {
 			center: myLatLng,
