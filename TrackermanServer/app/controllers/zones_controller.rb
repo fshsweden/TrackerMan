@@ -5,7 +5,14 @@ class ZonesController < ApplicationController
   # GET /zones.json
   def index
     @zones = Zone.all
-    gon.zones = @zones
+
+    puts @zones.to_json
+
+    gon.zones = []
+    @zones.each do |z|
+      gon.zones.push JSON.parse(z.json_points)     # json string
+    end
+
   end
 
   # GET /zones/1
@@ -84,8 +91,7 @@ class ZonesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def zone_params
-      params.require(:zone).permit(:name, {:polygons_attributes => [
-          :id, :lat_start, :lng_start, :lat_end, :lng_end, :_destroy ]})
+      params.require(:zone).permit(:name, :json_points)
     end
 end
 

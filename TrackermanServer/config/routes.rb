@@ -4,13 +4,8 @@ Rails.application.routes.draw do
   resources :areas
   devise_for :users
 
-  resources :areas do
-    get 'select' => 'areas#select'
-    resources :zones
-    resources :places
-  end
-
-
+  resources :zones
+  resources :places
   resources :treasures
 
   get 'api/get_users'       => 'service#get_users'

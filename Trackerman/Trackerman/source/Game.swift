@@ -11,15 +11,36 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class Game {
+class Game : NSObject, CLLocationManagerDelegate {
+    
     var audioPlayer = AVAudioPlayer()
     
     typealias LatLongPointsArray = [CLLocation]
     
     var data : Dictionary<String, LatLongPointsArray> = [:]
+
+    let regionRadius: CLLocationDistance = 1000
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var startLocation: CLLocation! // implicitly unwrapped Optional!
+    var entries : Str2Dict2Dict  = Str2Dict2Dict()
+    
+    var lat = 55.212323
+    var lng = 37.416
+    
+    var name: String = ""
+    var client: GameClient
+    var mapView: MKMapView? = nil
     
     
-    init() {
+    /*  -----------------------------------------------------------------------------------------------
+     
+        -----------------------------------------------------------------------------------------------
+    */
+    init(theClient: GameClient) {
+        
+        client = theClient
+        super.init()
         
         if let soundPath  = NSBundle.mainBundle().URLForResource("coin-drop-2", withExtension: "wav") {
             do {
@@ -33,7 +54,8 @@ class Game {
             print("Audio URL not found!")
         }
         
-        /*  load a path with control points!
+        
+        /*  load a TEST path with control points!
         */
         var points : LatLongPointsArray = []
         
@@ -55,6 +77,32 @@ class Game {
         points.append(CLLocation(latitude: 60.63466352, longitude: 16.96924746))
 
         data["Bruksparken runt"] = points
+        
+        setupLocationHandler()
+    }
+
+    func setupMap(theName:String, theMapView: MKMapView) {
+        name = theName
+        mapView = theMapView
+        centerMapOnLocation2(lat, longitude: lng)
+    }
+    
+    
+    func setupLocationHandler() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        //locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.distanceFilter = 10 /* don't send updates unless location changed at least 10 meters */
+        startLocation = nil
+    }
+
+    func startTracking() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopTracking() {
+        locationManager.stopUpdatingLocation()
     }
     
     func play() {
@@ -78,6 +126,90 @@ class Game {
     */
     func distance(pt1 : CLLocation,pt2: CLLocation) -> Double {
         return pt2.distanceFromLocation(pt1);
+    }
+ 
+    
+    internal func locationManager(manager: CLLocationManager,  didUpdateLocations locations: [CLLocation])
+    {
+        print ("didUpdateLocations!")
+        
+        let latestLocation = locations[locations.count - 1]
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        
+        if (entries["player"] == nil) {
+            entries["player"]           = Dictionary<String,Dictionary<String,String>>()
+            entries["player"]!["info"]  = Dictionary<String,String>()
+            
+            entries["player"]!["info"]!["name"] = "Peter"
+        }
+        
+        if (entries["positions"] == nil) {
+            entries["positions"] = [:]
+        }
+        
+        for loc in locations {
+            
+            let stringDate: String = formatter.stringFromDate(loc.timestamp)
+            
+            let  entry : [String:String] = [
+                "name"      : name,
+                "ts"        : stringDate,
+                "lat"       : "\(loc.coordinate.latitude)",
+                "lng"       : "\(loc.coordinate.longitude)",
+                "altitude"  : "\(loc.altitude)",
+                "horizAcc"  : "\(loc.horizontalAccuracy)",
+                "verticAcc" : "\(loc.verticalAccuracy)"
+            ]
+            
+            entries["positions"]![stringDate] = entry
+            
+            
+            
+            
+        }
+        
+        
+        client.userMovedTo(latestLocation)
+        
+        if startLocation == nil {
+            startLocation = latestLocation
+        }
+        
+        // var distanceBetween: CLLocationDistance =
+        // latestLocation.distanceFromLocation(startLocation)
+        
+        // distance.text = String(format: "%.2f", distanceBetween)
+        
+        centerMapOnLocation2(latestLocation.coordinate.latitude, longitude: latestLocation.coordinate.longitude)
+        
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("LOCATION ERROR");
+        print(error)
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(
+            location.coordinate,
+            regionRadius * 0.0025,
+            regionRadius * 0.0025
+        )
+        if (mapView != nil) {
+            mapView!.setRegion(coordinateRegion, animated: true)
+        }
+    }
+    
+    func centerMapOnLocation2(latitude: Double, longitude: Double) {
+        if (mapView != nil) {
+            mapView!.showsUserLocation = true
+            let span = MKCoordinateSpanMake(0.0030, 0.0030)
+            let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: span)
+            mapView!.setRegion(region, animated: true)
+        }
     }
     
 }
