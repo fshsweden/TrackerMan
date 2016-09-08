@@ -11,6 +11,7 @@
 
 	private
 
+
     def authenticate_html_only
 
 		#
@@ -18,13 +19,19 @@
 		#  for json : nothing!
 		#
 		#
+		authenticate_user!
 
     end
 
 	def set_menu
 
+		@current_area = 1
+		@current_zone = 1
+
 		# dynamic menu here!
 		@menuitems = {
+			'Zones' => zones_path,
+			'Places' => places_path,
 			'Treasures' => treasures_path,
 			'Players' => players_path
 		}
@@ -33,5 +40,7 @@
 			puts "KEY=" + key.to_s
 			puts "VAL=" + val.to_s
 		end
+
+
 	end
 end

@@ -39,6 +39,10 @@ class ServiceController < ApplicationController
 		puts "PING from Android!"
 	end
 
+	def ping_ios
+		puts "PING from IOS!"
+	end
+
 	def ping
 		add_pos
 	end

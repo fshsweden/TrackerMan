@@ -2,9 +2,9 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Rails TrackermanServer: development" uuid="4d771ef5-29b5-4c5a-bc70-f033f1cfc22a">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
     </data-source>
   </component>
 </project>

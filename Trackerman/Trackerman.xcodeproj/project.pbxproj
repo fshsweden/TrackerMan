@@ -25,6 +25,7 @@
 		16954D0A1D4E9A4F00D59223 /* TrackermanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D091D4E9A4F00D59223 /* TrackermanTests.swift */; };
 		16954D151D4E9A4F00D59223 /* TrackermanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16954D141D4E9A4F00D59223 /* TrackermanUITests.swift */; };
 		16954D231D4E9AA600D59223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16954D221D4E9AA600D59223 /* MapKit.framework */; };
+		16BFB5561D79C38000D6C01A /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BFB5551D79C38000D6C01A /* GameProtocol.swift */; };
 		16C78AA51D5B805200B74133 /* Map-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA41D5B805200B74133 /* Map-128.png */; };
 		16C78AA71D5B809A00B74133 /* map-32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA61D5B809A00B74133 /* map-32.jpg */; };
 		16C78AA91D5B80E300B74133 /* map-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C78AA81D5B80E300B74133 /* map-32.png */; };
@@ -79,6 +80,7 @@
 		16954D241D4F409100D59223 /* LocationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationManager.framework; path = "../../../Library/Developer/Xcode/DerivedData/Trackerman-fxanzhbqqunmtsdfrxtfglzbunli/Build/Products/Debug-iphonesimulator/LocationManager/LocationManager.framework"; sourceTree = "<group>"; };
 		16954D261D4F40FB00D59223 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Trackerman-fxanzhbqqunmtsdfrxtfglzbunli/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		16954D281D4F410300D59223 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = "Pods/../build/Debug-iphoneos/OMGHTTPURLRQ/OMGHTTPURLRQ.framework"; sourceTree = "<group>"; };
+		16BFB5551D79C38000D6C01A /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		16C78AA41D5B805200B74133 /* Map-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Map-128.png"; path = "Assets.xcassets/Map-128.png"; sourceTree = "<group>"; };
 		16C78AA61D5B809A00B74133 /* map-32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "map-32.jpg"; path = "Assets.xcassets/map-32.jpg"; sourceTree = "<group>"; };
 		16C78AA81D5B80E300B74133 /* map-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-32.png"; path = "Assets.xcassets/map-32.png"; sourceTree = "<group>"; };
@@ -125,15 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				1627F79D1D70F2F00033FBD3 /* AppDelegate.swift */,
-				1627F79E1D70F2F00033FBD3 /* FirstViewController.swift */,
-				1627F79F1D70F2F00033FBD3 /* Game.swift */,
-				1627F7A01D70F2F00033FBD3 /* LocationEntry.swift */,
-				1627F7A11D70F2F00033FBD3 /* LocationManager.swift */,
-				1627F7A21D70F2F00033FBD3 /* MapViewController.swift */,
-				1627F7A31D70F2F00033FBD3 /* Request.swift */,
-				1627F7A41D70F2F00033FBD3 /* RestApiClient.swift */,
-				1627F7A51D70F2F00033FBD3 /* SecondViewController.swift */,
-				1627F7A61D70F2F00033FBD3 /* SwiftyJSON.swift */,
+				16AC4A841D7B0AFB008C3A41 /* ViewControllers */,
+				16AC4A861D7B0B2F008C3A41 /* Game */,
+				16AC4A871D7B0B36008C3A41 /* Location */,
+				16AC4A851D7B0B1D008C3A41 /* Network */,
 			);
 			name = source;
 			sourceTree = "<group>";
@@ -202,6 +199,44 @@
 				16954D161D4E9A4F00D59223 /* Info.plist */,
 			);
 			path = TrackermanUITests;
+			sourceTree = "<group>";
+		};
+		16AC4A841D7B0AFB008C3A41 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1627F79E1D70F2F00033FBD3 /* FirstViewController.swift */,
+				1627F7A21D70F2F00033FBD3 /* MapViewController.swift */,
+				1627F7A51D70F2F00033FBD3 /* SecondViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		16AC4A851D7B0B1D008C3A41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1627F7A31D70F2F00033FBD3 /* Request.swift */,
+				1627F7A41D70F2F00033FBD3 /* RestApiClient.swift */,
+				1627F7A61D70F2F00033FBD3 /* SwiftyJSON.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		16AC4A861D7B0B2F008C3A41 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1627F79F1D70F2F00033FBD3 /* Game.swift */,
+				16BFB5551D79C38000D6C01A /* GameProtocol.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		16AC4A871D7B0B36008C3A41 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1627F7A01D70F2F00033FBD3 /* LocationEntry.swift */,
+				1627F7A11D70F2F00033FBD3 /* LocationManager.swift */,
+			);
+			name = Location;
 			sourceTree = "<group>";
 		};
 		4170B9C16CE829A652CDEDBA /* Frameworks */ = {
@@ -517,6 +552,7 @@
 				1627F7AD1D70F2F00033FBD3 /* Request.swift in Sources */,
 				1627F7AE1D70F2F00033FBD3 /* RestApiClient.swift in Sources */,
 				1627F7A91D70F2F00033FBD3 /* Game.swift in Sources */,
+				16BFB5561D79C38000D6C01A /* GameProtocol.swift in Sources */,
 				1627F7A81D70F2F00033FBD3 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

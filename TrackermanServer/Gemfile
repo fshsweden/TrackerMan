@@ -15,6 +15,9 @@ gem 'nested_form'
 gem 'bootstrap_form'
 gem 'dry_crud'
 gem 'rspec'
+gem 'simple_form'
+gem 'nested_form'  #railscasts
+
 
 
 gem 'rails', '4.2.5'

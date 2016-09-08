@@ -1,0 +1,174 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Zoner</h1>
+
+<table class="table table-bordered table-hovered table-condensed">
+  <thead>
+    <tr>
+      <th>Zon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zones.each do |zone| %>
+      <tr>
+        <td><%= zone.name %></td>
+        <td><%= zone.json_points %></td>
+<!--        <td><%= link_to 'Edit', edit_zone_path(zone) %></td>   -->
+        <td id="<%= zone.name %>" class="zone_name">Show</td>
+        <td><%= link_to 'Destroy', zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<script>
+  $('.zone_name').click(function(evt) {
+    // alert($(this).attr('id'));
+    var id=$(this).attr('id');
+    alert(typeof(gon.zones));
+    for (i=0; i<gon.zones.length; i++) {
+      alert(gon.zones[i].name);
+    }
+  });
+
+</script>
+
+<div id="control">
+  <button id="start">START</button>
+  <input id="name"></input>
+  <button id="stop" >STOP</button>
+  <button id="save" >SAVE</button>
+</div>
+
+<div id="map">
+
+</div>
+
+<style>
+  #map {
+    width: 100%;
+    height: 1000px;
+  }
+</style>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLrXVDgIBkFlSsRYbzyxKDce9pRIEaekY&callback=initMap" >
+</script>
+
+<script>
+  var started = false;
+  var polyline;
+  var points = [];
+  var map;
+
+  /*  -------------------------------------------------
+
+      -------------------------------------------------
+   */
+  function initMap() {
+
+    var myLatLng = {lat: 60.644, lng: 17.000};
+    var mapDiv = document.getElementById('map');
+
+    map = new google.maps.Map(mapDiv, {
+      center: myLatLng,
+      mapTypeId: google.maps.MapTypeId.SATELLITE,
+      zoom: 15
+    });
+
+    /*  -----------------------------------------------
+        MAP CLICK EVENT HANDLER
+        -----------------------------------------------
+     */
+    map.addListener('click', function(event) {
+      if (started) {
+        var path = polyline.getPath();
+        path.push(event.latLng);
+
+        points.push(event.latLng);
+      }
+    });
+
+    /*  -----------------------------------------------
+        START BUTTON EVENT HANDLER
+        -----------------------------------------------
+     */
+    $("#start").click(function() {
+      started = true;
+
+      polyline = new google.maps.Polyline({
+        strokeColor: '#000000',
+        strokeOpacity: 1.0,
+        strokeWeight: 3
+      });
+      polyline.setMap(map);
+    });
+
+    /*  -----------------------------------------------
+        STOP BUTTON EVENT HANDLER
+        -----------------------------------------------
+     */
+    $("#stop").click(function() {
+      started = false;
+
+      // Construct the polygon.
+      var z = new google.maps.Polygon({
+        paths: points,
+        strokeColor: '#000000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.25,
+        editable: true
+      });
+
+      polyline.setMap(null);
+      z.setMap(map);
+
+      points = [];
+    });
+
+    /*  -----------------------------------------------
+        SAVE BUTTON EVENT HANDLER
+        -----------------------------------------------
+     */
+    $("#save").click(function() {
+      // save the ZONE
+      var str = JSON.stringify(polyline.getPath().getArray());
+      var name = $("#name").val();
+      $.post("/zones", {
+        zone: {
+          name: name,
+          json_points: str
+        }
+      });
+    });
+
+    drawZones(gon.zones);
+
+  }
+
+  function drawZones(points) {
+
+    // Construct the polygon.
+    var z = new google.maps.Polygon({
+      paths: points,
+      strokeColor: '#000000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.25,
+      editable: true
+    });
+
+    z.setMap(map);
+  }
+
+</script>
+
+
+

@@ -1,0 +1,622 @@
+    <!--
+    <%= f.fields_for :borders do |builder| %>
+        <%= render "border_fields", :f => builder %>
+        <%= builder.link_to_remove "Remove" %>
+    <% end %>
+    <%= f.link_to_add "Add a segment", :borders %>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Uses gem GON to communicate variables between RAILS and JS -->
+<!-- See TreasureController, specificallty "gon.treasures = Treasure.all" -->
+
+<div id="map">
+
+</div>
+<div id="demo">
+
+</div>
+<div id="log">
+  <ul id="latlng">
+
+  </ul>
+</div>
+
+<style>
+  #map {
+    width: 100%;
+    height: 1000px;
+  }
+</style>
+
+<script>
+  function initMap() {
+    var myLatLng = {lat: 60.644, lng: 17.000};
+
+    /* CREATE A MAP! */
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: myLatLng,
+      mapTypeId: google.maps.MapTypeId.SATELLITE,
+      zoom: 15
+    });
+
+    // Define the LatLng coordinates for the polygon's path.
+    var triangleCoords1 = [
+      {lat: 60.574, lng: 17.01},
+      {lat: 60.575, lng: 17.02},
+      {lat: 60.575, lng: 17.00},
+      {lat: 60.574, lng: 17.01}
+    ];
+
+    var zones = [];
+    var grid = [];
+
+    var bruksparken_coords = [
+      {lat: 60.63938244744585, lng: 16.964407078921795},
+      {lat: 60.63990848314156, lng: 16.965587250888348},
+      {lat: 60.64009785389043, lng: 16.973118893802166},
+      {lat: 60.63644701065543, lng: 16.9742776080966},
+      {lat: 60.63623657481093, lng: 16.97599422186613},
+      {lat: 60.63579465506608, lng: 16.976959817111492},
+      {lat: 60.63540533979546, lng: 16.976208798587322},
+      {lat: 60.63597352807353, lng: 16.97374116629362},
+      {lat: 60.6357210011863,  lng: 16.971960179507732},
+      {lat: 60.63468982919985, lng: 16.969213597476482},
+      {lat: 60.635310640775515,lng: 16.96726094931364},
+      {lat: 60.63603665948625, lng: 16.9647504016757},
+      {lat: 60.636562749784375,lng: 16.96424078196287},
+      {lat: 60.63794106565135, lng: 16.964476816356182}
+    ];
+    zones.push(bruksparken_coords);
+
+    var sagvreten_coords = [
+      { lat: 60.64234391652304, lng: 16.97919761762023},
+      { lat: 60.6430013993865, lng: 16.97771703824401},
+      { lat: 60.643895554555534, lng: 16.9769231043756},
+      { lat: 60.64527881632157, lng: 16.975807305425406},
+      { lat: 60.64571008731564, lng: 16.970796938985586},
+      { lat: 60.64494747005172, lng: 16.97067892178893},
+      { lat: 60.64474234922494, lng: 16.971848364919424},
+      { lat: 60.64425846928131, lng: 16.972148772329092},
+      { lat: 60.64388503522717, lng: 16.972020026296377},
+      { lat: 60.64387451589538, lng: 16.97091495618224},
+      { lat: 60.643648349431274, lng: 16.9699171744287},
+      { lat: 60.64302769842205, lng: 16.970314141362906},
+      { lat: 60.64326438877619, lng: 16.972062941640615},
+      { lat: 60.6430855562247, lng: 16.972878333181143},
+      { lat: 60.642543792732546, lng: 16.97197711095214},
+      { lat: 60.642201898463, lng: 16.97315728291869},
+      { lat: 60.6413865974913, lng: 16.97366153821349},
+      { lat: 60.64131821647236, lng: 16.974648591130972},
+      { lat: 60.64154439928899, lng: 16.97670852765441},
+      { lat: 60.64194416038524, lng: 16.978307124227285}
+    ];
+    zones.push(sagvreten_coords);
+
+    var demo_coords = [
+      { lat: 60.6365,  lng: 16.9835},
+      { lat: 60.6372,  lng: 16.9835},
+      { lat: 60.6372,  lng: 16.9872},
+      { lat: 60.6365,  lng: 16.9872}
+    ];
+
+    var success_point = {
+      lat: 60.6366, lng: 16.9840
+    };
+
+    var fail_point = {
+      lat: 59.6366, lng: 16.9840
+    };
+
+    /*
+      if (pointInPolygon(success_point, demo_coords)) {
+        alert("success!");
+      }
+      else {
+        alert("fail!");
+      }
+
+      if (pointInPolygon(fail_point, demo_coords)) {
+        alert("fail!");
+      }
+      else {
+        alert("success!");
+      }
+    */
+
+    var gaddaborg_coords = [
+      { lat: 60.636546967200346, lng: 16.9864503107965},
+      { lat: 60.63815149036913, lng: 16.988295670598745},
+      { lat: 60.63970333024143, lng: 16.991879101842642},
+      { lat: 60.640492372710455, lng: 16.993584986776114},
+      { lat: 60.641523359093945, lng: 16.99646031484008},
+      { lat: 60.64168116022202, lng: 16.994582768529654},
+      { lat: 60.64202831998418, lng: 16.99367081746459},
+      { lat: 60.64353263574283, lng: 16.99537670239806},
+      { lat: 60.64392711252001, lng: 16.994228716939688},
+      { lat: 60.642191378581806, lng: 16.9924477301538},
+      { lat: 60.64136029711658, lng: 16.991589423269033},
+      { lat: 60.64082376478744, lng: 16.990484353154898},
+      { lat: 60.63984535931138, lng: 16.98943292722106},
+      { lat: 60.63930880176336, lng: 16.98767339810729},
+      { lat: 60.63919307249378, lng: 16.986031886190176},
+      { lat: 60.63877749578254, lng: 16.985302325338125},
+      { lat: 60.63805679941612, lng: 16.98496973142028},
+      { lat: 60.63720456832154, lng: 16.983521338552237},
+      { lat: 60.63679948761748, lng: 16.984787341207266}
+    ];
+    zones.push(gaddaborg_coords);
+
+    var ikea_coords = [
+      { lat: 60.63355865872912, lng: 16.98895012959838},
+      { lat: 60.63467930686673, lng: 16.989604588598013},
+      { lat: 60.63447412068432, lng: 16.991364117711782},
+      { lat: 60.63347973837797, lng: 16.990827675908804},
+      { lat: 60.63350078382383, lng: 16.99044143781066},
+      { lat: 60.6332745445609, lng: 16.990269776433706}
+    ];
+    zones.push(ikea_coords);
+
+    var kopis_coords = [
+      { lat: 60.63350078382383, lng: 16.9908710103482},
+      { lat: 60.634610911617685, lng: 16.991525469347835},
+      { lat: 60.634418878027475, lng: 16.992786107584834},
+      { lat: 60.634560930382406, lng: 16.992834387347102},
+      { lat: 60.63463458691261, lng: 16.993016777560115},
+      { lat: 60.63456619156871, lng: 16.993440566584468},
+      { lat: 60.634589866896484, lng: 16.99386972002685},
+      { lat: 60.63432417610979, lng: 16.994207678362727},
+      { lat: 60.63411372640785, lng: 16.994062839075923},
+      { lat: 60.633869076902585, lng: 16.9958599191159},
+      { lat: 60.63378226534156, lng: 16.995800910517573},
+      { lat: 60.63370597620103, lng: 16.99640708975494},
+      { lat: 60.633855923650785, lng: 16.996482191607356},
+      { lat: 60.63380594124503, lng: 16.996798692271113},
+      { lat: 60.63364810156019, lng: 16.996712861582637},
+      { lat: 60.633469215649896, lng: 16.996498284861445},
+      { lat: 60.63326139106655, lng: 16.99640172533691},
+      { lat: 60.633161424334084, lng: 16.99634808115661},
+      { lat: 60.633169316455806, lng: 16.99612814001739},
+      { lat: 60.632701047223435, lng: 16.99586528353393},
+      { lat: 60.63287993739593, lng: 16.994518814608455},
+      { lat: 60.632701047223435, lng: 16.99441689066589},
+      { lat: 60.632806276856876, lng: 16.99360149912536},
+      { lat: 60.633066718722674, lng: 16.992732463404536},
+      { lat: 60.633269283163784, lng: 16.992340860888362}
+    ];
+    zones.push(kopis_coords);
+
+    var ludvigsberg_coords = [
+      { lat: 60.64636224224586, lng: 17.00188910588622},
+      { lat: 60.645320891794576, lng: 17.004764433950186},
+      { lat: 60.64396393010619, lng: 17.00220024213195},
+      { lat: 60.642980360142595, lng: 17.000215407460928},
+      { lat: 60.6443373632461, lng: 16.99890648946166},
+      { lat: 60.6450105838896, lng: 16.999571677297354},
+      { lat: 60.645930979979816, lng: 17.001341935247183}
+    ];
+    zones.push(ludvigsberg_coords);
+
+    vretas_coords = [
+      { lat: 60.64643061256285, lng: 17.001867648214102},
+      { lat: 60.64586786794458, lng: 17.00112735852599},
+      { lat: 60.64519992466157, lng: 16.999786254018545},
+      { lat: 60.64477916587973, lng: 16.999260541051626},
+      { lat: 60.64405860370606, lng: 16.999110337346792},
+      { lat: 60.642990879766266, lng: 17.00014030560851},
+      { lat: 60.64249119385022, lng: 16.998970862478018},
+      { lat: 60.64327490830715, lng: 16.99712550267577},
+      { lat: 60.64413749816016, lng: 16.994872447103262},
+      { lat: 60.64567853109716, lng: 16.99718987569213},
+      { lat: 60.646025647800926, lng: 16.99669634923339},
+      { lat: 60.64721423122118, lng: 16.998777743428946}
+    ];
+    zones.push(vretas_coords);
+
+    var golfbanan_coords = [
+      { lat: 60.63512124190105, lng: 16.967373602092266},
+      { lat: 60.634190014583524, lng: 16.97043215855956},
+      { lat: 60.633495522463654, lng: 16.97267448529601},
+      { lat: 60.63320088492339, lng: 16.974809523671865},
+      { lat: 60.632564248186526, lng: 16.972277518361807},
+      { lat: 60.63246954082097, lng: 16.971247550100088},
+      { lat: 60.63224855588608, lng: 16.97068965062499},
+      { lat: 60.631622423678685, lng: 16.96948802098632},
+      { lat: 60.63141195634066, lng: 16.969509478658438},
+      { lat: 60.63064373889814, lng: 16.96741735562682},
+      { lat: 60.6299807420077, lng: 16.965078469365835},
+      { lat: 60.63027540897533, lng: 16.964391823858023},
+      { lat: 60.62890728956774, lng: 16.961076613515615},
+      { lat: 60.629912336790795, lng: 16.95974623784423},
+      { lat: 60.63077528427949, lng: 16.961655970662832},
+      { lat: 60.63223803275619, lng: 16.965089198201895},
+      { lat: 60.633406079209266, lng: 16.966387387365103},
+      { lat: 60.6340163929561, lng: 16.965260859578848},
+      { lat: 60.63449516548109, lng: 16.966355200856924},
+      { lat: 60.63483714150299, lng: 16.96621572598815}
+    ];
+
+    zones.push(golfbanan_coords);
+
+    var klubbhuset_coords = [
+      { lat: 60.636499619401924, lng: 16.96418797597289},
+      { lat: 60.63596826711691, lng: 16.964756604284048},
+      { lat: 60.63579465506608, lng: 16.965378876775503},
+      { lat: 60.635431645029435, lng: 16.965132113546133},
+      { lat: 60.635210680397115, lng: 16.964402552694082},
+      { lat: 60.63539481769588, lng: 16.96396267041564},
+      { lat: 60.635941962320814, lng: 16.963415499776602}
+    ];
+
+    zones.push(klubbhuset_coords);
+
+    var spikasvagen1_coords = [
+      { lat: 60.63638388004632, lng: 16.986375208944082},
+      { lat: 60.634405725, lng: 16.985130663961172},
+      { lat: 60.63420053707636, lng: 16.986782904714346},
+      { lat: 60.63596826711691, lng: 16.98789870366454}
+    ];
+
+    zones.push(spikasvagen1_coords);
+
+    var spikasvagen2_coords = [
+      { lat: 60.63417423083785, lng: 16.986777959391475},
+      { lat: 60.6331035487157, lng: 16.986472187563777},
+      { lat: 60.63226697135519, lng: 16.98568898253143},
+      { lat: 60.632361679315785, lng: 16.984744844958186},
+      { lat: 60.631390909531284, lng: 16.983757792040706},
+      { lat: 60.6315750686474, lng: 16.982829747721553},
+      { lat: 60.63437941892891, lng: 16.98488968424499}
+    ];
+
+    zones.push(spikasvagen2_coords);
+
+    var nyakopis_coords = [
+      { lat: 60.62722863299372, lng: 16.986191980540752},
+      { lat: 60.62618666427175, lng: 16.99026893824339},
+      { lat: 60.627818014535, lng: 16.991620771586895},
+      { lat: 60.62870206665005, lng: 16.994066946208477},
+      { lat: 60.629007269490415, lng: 16.996083967387676},
+      { lat: 60.62971238224784, lng: 16.99719976633787},
+      { lat: 60.630827902281744, lng: 16.996105425059795},
+      { lat: 60.63154349858792, lng: 16.996148340404034},
+      { lat: 60.63100680284719, lng: 16.994388811290264},
+      { lat: 60.630185956787656, lng: 16.99226450175047},
+      { lat: 60.62948085438591, lng: 16.9905049726367},
+      { lat: 60.62897569691675, lng: 16.98853086680174}
+    ];
+
+    zones.push(nyakopis_coords);
+
+    var tavlan_coords = [
+      { lat: 60.63005967092376, lng: 16.986705288290977},
+      { lat: 60.62864944517872, lng: 16.98666237294674},
+      { lat: 60.627891686470285, lng: 16.986061558127403},
+      { lat: 60.626270865014774, lng: 16.98413036763668},
+      { lat: 60.623597384107185, lng: 16.980825886130333},
+      { lat: 60.621934240869756, lng: 16.979066357016563},
+      { lat: 60.62271319205004, lng: 16.977564319968224},
+      { lat: 60.625576202310434, lng: 16.97790764272213},
+      { lat: 60.62831266572881, lng: 16.980010494589806},
+      { lat: 60.62970185829019, lng: 16.98241375386715}
+    ];
+
+    zones.push(tavlan_coords);
+
+      var sofiedalsskolan_coords = [
+        { lat: 60.638083102486526, lng: 17.00766121968627},
+        { lat: 60.637446562157486, lng: 17.005322333425283},
+        { lat: 60.63848816706044, lng: 17.00391685590148},
+        { lat: 60.63908786370631, lng: 17.004056330770254},
+        { lat: 60.639677028493125, lng: 17.005987521260977}
+      ];
+
+    zones.push(sofiedalsskolan_coords);
+
+    var sportcentrum_coords = [
+      { lat: 60.63809888431845, lng: 17.007843609899282},
+      { lat: 60.63700991978738, lng: 17.00918471440673},
+      { lat: 60.636310227512766, lng: 17.0078650675714},
+      { lat: 60.636126095442634, lng: 17.007575388997793},
+      { lat: 60.635952484241805, lng: 17.00686728581786},
+      { lat: 60.63621027023379, lng: 17.00591241940856},
+      { lat: 60.63668111891824, lng: 17.005531964823604},
+      { lat: 60.63699150702737, lng: 17.005553422495723},
+      { lat: 60.63733345656899, lng: 17.00509208254516},
+      { lat: 60.63776746422506, lng: 17.006535110995173}
+    ];
+
+    zones.push(sportcentrum_coords);
+
+    var nickback_coords = [
+      { lat: 60.63859863833356, lng: 17.007532473653555},
+      { lat: 60.63884062170403, lng: 17.008583899587393},
+      { lat: 60.638041017563566, lng: 17.010547276586294},
+      { lat: 60.63745182287287, lng: 17.009967919439077},
+      { lat: 60.63724665433656, lng: 17.009023781865835}
+    ];
+
+    zones.push(nickback_coords);
+
+    var skolvagen_coords = [
+      { lat: 60.6412445752128, lng: 17.010515090078115},
+      { lat: 60.641086771947144, lng: 17.010847683995962},
+      { lat: 60.64121301462148, lng: 17.01116954907775},
+      { lat: 60.6406028371147, lng: 17.01267158612609},
+      { lat: 60.64007155246407, lng: 17.011587973684072},
+      { lat: 60.63985587995832, lng: 17.011952754110098},
+      { lat: 60.639261458021494, lng: 17.010547276586294},
+      { lat: 60.63904578009516, lng: 17.011094447225332},
+      { lat: 60.638372434844435, lng: 17.010053750127554},
+      { lat: 60.63902473826901, lng: 17.008551713079214},
+      { lat: 60.6399926480562, lng: 17.007221337407827},
+      { lat: 60.64048185227124, lng: 17.008787747472525},
+      { lat: 60.64079746395343, lng: 17.009506579488516}
+    ];
+
+    zones.push(skolvagen_coords);
+
+    var furugarden_coords = [
+      { lat: 60.64437943994835, lng: 17.007554350420833},
+      { lat: 60.64529722434778, lng: 17.00910466723144},
+      { lat: 60.64586523827375, lng: 17.00788694433868},
+      { lat: 60.645205184111596, lng: 17.005483685061336}
+    ];
+    zones.push(furugarden_coords);
+
+
+
+    var sextagon1_coords = [
+      { lat: 60.440, lng: 17.000},
+      { lat: 60.441, lng: 17.002},
+      { lat: 60.440, lng: 17.004},
+      { lat: 60.439, lng: 17.004},
+      { lat: 60.438, lng: 17.002},
+      { lat: 60.439, lng: 17.000}
+    ];
+    grid.push(sextagon1_coords);
+
+    // 2 down one to the right
+    var sextagon2_coords = [
+      { lat: 60.438, lng: 17.002},
+      { lat: 60.439, lng: 17.004},
+      { lat: 60.438, lng: 17.006},
+      { lat: 60.437, lng: 17.006},
+      { lat: 60.436, lng: 17.004},
+      { lat: 60.437, lng: 17.002}
+    ];
+    grid.push(sextagon2_coords);
+
+    for (var x = 0; x < zones.length; x++) {
+      var m = zones[x];
+
+      // Construct the polygon.
+      var z = new google.maps.Polygon({
+        paths: m,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        editable: true
+      });
+
+      z.addListener('click', function(e) {
+        alert("This is a ZONE!");
+      });
+      z.setMap(map);
+    }
+
+    for (var x = 0; x < grid.length; x++) {
+      var m = grid[x];
+
+      // Construct the polygon.
+      var z = new google.maps.Polygon({
+        paths: m,
+        strokeColor: '#000000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.05,
+        editable: true
+      });
+
+      z.addListener('click', function(e) {
+        alert("This is a ZONE!");
+      });
+      z.setMap(map);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+        CLICK EVENT - Save LATITUDE/LONGITUDE
+     */
+    map.addListener('click', function(e) {
+      placeMarkerAndPanTo(e.latLng, map);
+
+      addLatLngToLog(e.latLng);
+
+      saveLatLng(e.latLng);
+    });
+
+    function saveLatLng(ll) {
+      alert("Saving:" + ll.lat() + " : " + ll.lng() + " to Zone.id " + gon.zone.id);
+
+
+      // POST  /borders?params=[zoneid:2;
+      //
+      // ]
+      $.post( "/borders", {
+        border: {zone_id: gon.zone.id, lat_start: ll.lat, lng_start: ll.lng, lat_end: 0.0, lng_end: 0.0 }} );
+    }
+
+    function placeMarkerAndPanTo(latLng, map) {
+      var marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+      });
+      map.panTo(latLng);
+
+      informUser(latLng.lat(), latLng.lng());
+    }
+
+    function addLatLngToLog(latLng) {
+      var str = "{ lat: " + latLng.lat() + ", lng: " + latLng.lng() + "},"
+
+      var list = document.getElementById('latlng');
+      var entry = document.createElement('li');
+      entry.appendChild(document.createTextNode(str));
+      list.appendChild(entry);
+    }
+
+
+
+
+//  Globals which should be set before calling this function:
+//
+//  int    polyCorners  =  how many corners the polygon has (no repeats)
+//  float  polyX[]      =  horizontal coordinates of corners
+//  float  polyY[]      =  vertical coordinates of corners
+//  float  x, y         =  point to be tested
+//
+//  (Globals are used in this example for purposes of speed.  Change as
+//  desired.)
+//
+//  The function will return YES if the point x,y is inside the polygon, or
+//  NO if it is not.  If the point is exactly on the edge of the polygon,
+//  then the function may return YES or NO.
+//
+//  Note that division by zero is avoided because the division is protected
+//  by the "if" clause which surrounds it.
+
+    // point = LatLng, coords LatLng[]
+    function pointInPolygon(point, coords) {
+
+      var polyCorners = coords.length;
+
+
+      var i, j=polyCorners-1 ;  // int
+      var oddNodes = false;     // boolean
+
+      // polyX[i] = coords[i].lng();
+      // polyY[i] = coords[i].lat();
+
+      var x = point.lng;
+      var y = point.lat;
+
+      for (i=0; i<polyCorners; i++) {
+
+        var polyX_i = coords[i].lng;
+        var polyY_i = coords[i].lat;
+
+        var polyX_j = coords[j].lng;
+        var polyY_j = coords[j].lat;
+
+        if (polyY_i < y && polyY_j >= y ||  polyY_j < y && polyY_i >= y) {
+
+          if (polyX_i + (y-polyY_i) / (polyY_j - polyY_i ) * (polyX_j - polyX_i ) < x ) {
+
+            oddNodes=!oddNodes;
+          }
+        }
+        j=i;
+      }
+
+      return oddNodes;
+    }
+
+
+
+
+
+
+  }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLrXVDgIBkFlSsRYbzyxKDce9pRIEaekY&callback=initMap">
+
+</script>
+
+<script type="text/javascript">
+
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      var geoOptions = {
+        maximumAge: 48 * 60 * 1000
+      };			navigator.geolocation.getCurrentPosition(successCb, errorCb, geoOptions);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function successCb(position) {
+    /* x.innerHTML = "Latitude: " + position.coords.latitude +
+     "<br>Longitude: " + position.coords.longitude; */
+    informUser(position.coords.latitude, position.coords.longitude);
+
+
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
+
+    document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
+  }
+
+  function informUser(lat, lng) {
+    x.innerHTML = "Lat: " + lat + "Long: " + lng;
+
+  }
+
+  function errorCb(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
+  getLocation();
+
+
+</script>

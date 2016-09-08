@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826070543) do
+ActiveRecord::Schema.define(version: 20160901072922) do
 
-  create_table "controls", force: :cascade do |t|
+  create_table "areas", force: :cascade do |t|
     t.string   "name"
-    t.string   "description"
-    t.float    "lat"
-    t.float    "lng"
-    t.string   "h"
-    t.integer  "track_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "lat"
+    t.integer  "lng"
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -33,19 +37,17 @@ ActiveRecord::Schema.define(version: 20160826070543) do
     t.datetime "login_time"
   end
 
+  create_table "polygons", force: :cascade do |t|
+    t.integer  "zone_id"
+    t.string   "json_points"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "positions", force: :cascade do |t|
     t.integer  "player_id"
     t.string   "lat"
     t.string   "lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tracks", force: :cascade do |t|
-    t.string   "name"
-    t.string   "track_type"
-    t.string   "difficulty"
-    t.string   "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,5 +81,12 @@ ActiveRecord::Schema.define(version: 20160826070543) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "zones", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "area_id"
+  end
 
 end

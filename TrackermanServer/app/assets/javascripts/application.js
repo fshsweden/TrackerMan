@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require local_time
 //= require bootstrap-sprockets
+//= require jquery_nested_form
 //= require_tree .

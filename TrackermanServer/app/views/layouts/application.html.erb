@@ -5,6 +5,7 @@
   <%= Gon::Base.render_data %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -40,11 +41,11 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 
-				  <% @menuitems.each do |key, value| %>
-					  <li>
-						<%= link_to( key,value, :data => {'no-turbolink' => :true}) %>
-					  </li>
-				  <% end %>
+          <% @menuitems.each do |key, value| %>
+              <li>
+                <%= link_to( key,value, :data => {'no-turbolink' => :true}) %>
+              </li>
+          <% end %>
 
 				  <!--
 				  <li><a href="#">Action</a></li>
@@ -96,11 +97,11 @@
   <!-- VARIANT1 -->
   <% flash.each do |name, msg| %>
 	  <div class="alert alert-<%= name == 'notice' ? "info" : "danger" %> fade in">
-		<button class="close" data-dismiss="alert">
-		  ×
-		</button>
-		<i class="fa-fw fa fa-info"></i>
-		<strong><Info><%= name %>!</strong> <%= raw(msg) %>
+      <button class="close" data-dismiss="alert">
+	  	  ×
+		  </button>
+		    <i class="fa-fw fa fa-info"></i>
+		    <strong><%= name %>!</strong> <%= raw(msg) %>
 	  </div>
   <% end %>
 
