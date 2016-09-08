@@ -127,16 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				1627F79D1D70F2F00033FBD3 /* AppDelegate.swift */,
-				1627F79E1D70F2F00033FBD3 /* FirstViewController.swift */,
-				1627F79F1D70F2F00033FBD3 /* Game.swift */,
-				1627F7A01D70F2F00033FBD3 /* LocationEntry.swift */,
-				1627F7A11D70F2F00033FBD3 /* LocationManager.swift */,
-				1627F7A21D70F2F00033FBD3 /* MapViewController.swift */,
-				1627F7A31D70F2F00033FBD3 /* Request.swift */,
-				1627F7A41D70F2F00033FBD3 /* RestApiClient.swift */,
-				1627F7A51D70F2F00033FBD3 /* SecondViewController.swift */,
-				1627F7A61D70F2F00033FBD3 /* SwiftyJSON.swift */,
-				16BFB5551D79C38000D6C01A /* GameProtocol.swift */,
+				16AC4A841D7B0AFB008C3A41 /* ViewControllers */,
+				16AC4A861D7B0B2F008C3A41 /* Game */,
+				16AC4A871D7B0B36008C3A41 /* Location */,
+				16AC4A851D7B0B1D008C3A41 /* Network */,
 			);
 			name = source;
 			sourceTree = "<group>";
@@ -205,6 +199,44 @@
 				16954D161D4E9A4F00D59223 /* Info.plist */,
 			);
 			path = TrackermanUITests;
+			sourceTree = "<group>";
+		};
+		16AC4A841D7B0AFB008C3A41 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1627F79E1D70F2F00033FBD3 /* FirstViewController.swift */,
+				1627F7A21D70F2F00033FBD3 /* MapViewController.swift */,
+				1627F7A51D70F2F00033FBD3 /* SecondViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		16AC4A851D7B0B1D008C3A41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1627F7A31D70F2F00033FBD3 /* Request.swift */,
+				1627F7A41D70F2F00033FBD3 /* RestApiClient.swift */,
+				1627F7A61D70F2F00033FBD3 /* SwiftyJSON.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		16AC4A861D7B0B2F008C3A41 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1627F79F1D70F2F00033FBD3 /* Game.swift */,
+				16BFB5551D79C38000D6C01A /* GameProtocol.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		16AC4A871D7B0B36008C3A41 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1627F7A01D70F2F00033FBD3 /* LocationEntry.swift */,
+				1627F7A11D70F2F00033FBD3 /* LocationManager.swift */,
+			);
+			name = Location;
 			sourceTree = "<group>";
 		};
 		4170B9C16CE829A652CDEDBA /* Frameworks */ = {

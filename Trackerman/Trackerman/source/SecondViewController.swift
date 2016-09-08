@@ -90,10 +90,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         horizAccuracy.text      = String(format: "ALT : %.4f", latestLocation.altitude)
         altitude.text           = String(format: "HACC: %.4f", latestLocation.horizontalAccuracy)
         verticalAccuracy.text   = String(format: "VACC: %.4f", latestLocation.verticalAccuracy)
-        
-        
     }
-    
     
     @IBAction func trackingButtonPressed(sender: AnyObject) {
 
@@ -130,14 +127,12 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         return String(format: "%1.6f", dbl)
     }
     
-    
-
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-	    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true);
         return false;
     }
