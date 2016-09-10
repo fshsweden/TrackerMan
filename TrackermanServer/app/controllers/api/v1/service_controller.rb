@@ -1,12 +1,26 @@
-class ServiceController < ApplicationController
-	
+class Api::V1::ServiceController < Api::V1::BaseController
+
+	#
+	# NOTE! This helps us avoid duplicate parameters in "params"
+	# I dont exactly know how this works. See:
+	# http://api.rubyonrails.org/classes/ActionController/ParamsWrapper.html
+	# and http://stackoverflow.com/questions/32788352/how-does-rails-parse-post-request-parameters
+	# and config/initializers/wrap_parameters.rb
+
+	wrap_parameters format: []
+
 	def register
 		
 	end
 
-	# GET
-	def get_users
+	# GET  --> get_players!
+	def get_players
 		@players = Player.all
+		render json: @players, each_serializer: PlayerSerializer, root: "players"
+	end
+
+	def get_zones
+		@zones = Zone.all
 		render json: @players
 	end
 
@@ -37,10 +51,13 @@ class ServiceController < ApplicationController
 
 	def ping_android
 		puts "PING from Android!"
+		render json: ["returncode": "OK"], root: "ping"
 	end
 
 	def ping_ios
-		puts "PING from IOS!"
+		puts "PING from IOS with params: #{params} "
+		puts "LAT: #{params['position']['lat']} and LNG: #{params['position']['lng'] }"
+		render json: ["returncode": "OK"], root: "ping"
 	end
 
 	def ping

@@ -1,0 +1,1 @@
+curl -H Accept: text/json -H Content-Type: application/json -XGET http://localhost:3000/api/v1/get_players

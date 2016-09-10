@@ -10,21 +10,29 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'api/get_users'       => 'service#get_users'
-      post 'api/create_player'  => 'service#create_player'
-      post 'api/add_pos'        => 'service#add_pos'
+      get  'get_players'            => 'service#get_players'
+      post 'create_player'          => 'service#create_player'
+      post 'add_pos'                => 'service#add_pos'
 
-      #get 'ping'        => 'service#ping'
-      get '/api/ping_android'           => 'service#ping_android'
-      get '/api/get_treasures_within'   => 'service#get_treasures_within'
+      post 'ping_ios'               => 'service#ping_ios'
+      get  'ping_android'           => 'service#ping_android'
+      get  'get_treasures_within'   => 'service#get_treasures_within'
 
-      get '/players'    => 'player#index'
-      get '/player/:id' => 'player#show', :as => 'show_player'
+      get  '/players'               => 'player#index'
+      get  '/player/:id'            => 'player#show', :as => 'show_player'
     end
   end
 
 
   #resource :player
   root :to => 'home#index'
+
+
+  # Catch invalid routes!
+  #match ':not_found' => 'my_controller#index',
+   #     :constraints => { :not_found => /.*/ }
+
+  #If you only want to redirect, nothing more, you could do this instead (again, at the bottom):
+  #match ':not_found' => redirect('/'), :constraints => { :not_found => /.*/ }
 
 end

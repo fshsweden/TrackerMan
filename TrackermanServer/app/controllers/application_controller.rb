@@ -19,7 +19,22 @@
 		#  for json : nothing!
 		#
 		#
-		authenticate_user!
+		h = request.env()
+
+	    h.each do |key, val|
+		    puts ">>> " + key.to_s
+	    end
+
+		puts ">>>>>>>>>>> " + h["HTTP_ACCEPT"]
+
+		#
+		# Client asks for javascript  (should be json!!)
+		#
+		if (h["HTTP_ACCEPT"] == "application/json")
+			# NO AUTH!
+		else
+			authenticate_user!
+		end
 
     end
 
@@ -32,8 +47,8 @@
 		@menuitems = {
 			'Zones' => zones_path,
 			'Places' => places_path,
-			'Treasures' => treasures_path,
-			'Players' => players_path
+			'Treasures' => treasures_path
+			#'Players' => players_path
 		}
 
 		@menuitems.each do |key, val|
