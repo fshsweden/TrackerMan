@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get  'get_players'            => 'service#get_players'
+      get  'get_zones'              => 'service#get_zones'
       post 'create_player'          => 'service#create_player'
       post 'add_pos'                => 'service#add_pos'
 
