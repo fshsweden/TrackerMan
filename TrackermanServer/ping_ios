@@ -1,2 +1,2 @@
-curl -H "Accept: application/json" -H "Content-Type: application/json" -XPOST http://localhost:3000/api/v1/ping_ios -d "{\"position\": {\"lat\":\"55.001\", \"lng\":\"17.001\"}}"
+curl -H "Accept: application/json" -H "Content-Type: application/json" -XPOST http://192.168.10.20:3000/api/v1/ping_ios -d "{\"position\": {\"lat\":\"55.001\", \"lng\":\"17.001\"}}"
 

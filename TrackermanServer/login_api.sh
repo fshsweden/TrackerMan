@@ -1,0 +1,1 @@
+curl -H "Accept: application/json" -H "Content-Type: application/json" 'http://192.168.10.20:3000/api/v1/sessions' -XPOST -d '{"user" : { "email" : "fshsweden@hotmail.com" , "password" : "wowu812" } }'

@@ -7,6 +7,8 @@ class Api::V1::ServiceController < Api::V1::BaseController
 	# and http://stackoverflow.com/questions/32788352/how-does-rails-parse-post-request-parameters
 	# and config/initializers/wrap_parameters.rb
 
+	before_action :authenticate_user!
+
 	wrap_parameters format: []
 
 	def register

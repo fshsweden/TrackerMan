@@ -1,8 +1,9 @@
  class ApplicationController < ActionController::Base
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-    before_action :set_menu
-    before_action :authenticate_html_only
+  before_action :set_menu
+  before_action :authenticate_html_only, :only => [:create]
 
   #protect_from_forgery with: :exception
 
@@ -22,7 +23,7 @@
 		h = request.env()
 
 	    h.each do |key, val|
-		    puts ">>> " + key.to_s
+		    puts ">>> " + key.to_s + " = " + val.to_s
 	    end
 
 		puts ">>>>>>>>>>> " + h["HTTP_ACCEPT"]
@@ -32,6 +33,8 @@
 		#
 		if (h["HTTP_ACCEPT"] == "application/json")
 			# NO AUTH!
+			# TODO: Add separate authentication later...
+			# verify that h["token"] == current_user.token
 		else
 			authenticate_user!
 		end

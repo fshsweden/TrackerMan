@@ -1,1 +1,2 @@
-curl -H Accept: text/json -H Content-Type: application/json -XGET http://localhost:3000/api/v1/get_players
+curl -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Token 12345678" -H "Authorization: email=fshsweden@hotmail.com"  -XGET http://localhost:3000/api/v1/get_players
+

@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   resources :places
   resources :areas
-  devise_for :users
 
   resources :zones
   resources :places
   resources :treasures
+
+  # we use Devise...
+  #get    'signup'  => 'users#new'
+  #get    'login'   => 'sessions#new'
+  #post   'login'   => 'sessions#create'
+  #delete 'logout'  => 'sessions#destroy'
 
   namespace :api do
     namespace :v1 do
@@ -21,7 +28,10 @@ Rails.application.routes.draw do
 
       get  '/players'               => 'player#index'
       get  '/player/:id'            => 'player#show', :as => 'show_player'
+
+      resources :sessions, only: [:create]
     end
+
   end
 
 

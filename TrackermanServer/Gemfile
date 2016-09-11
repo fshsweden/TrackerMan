@@ -11,14 +11,13 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'quiet_assets', group: :development
 gem 'oj'  # The fastest JSON parser and object serializer.
-gem 'nested_form'
 gem 'bootstrap_form'
 gem 'dry_crud'
 gem 'rspec'
 gem 'simple_form'
 gem 'nested_form'  #railscasts
 gem 'active_model_serializers', '0.9.3'
-
+gem 'active_hash_relation', github: 'kollegorna/active_hash_relation'
 
 gem 'rails', '4.2.5'
 gem 'sqlite3'

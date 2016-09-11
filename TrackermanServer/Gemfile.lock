@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/kollegorna/active_hash_relation.git
+  revision: ad20d03ccaa97008d1830cc9d6000d47dd5002d7
+  specs:
+    active_hash_relation (1.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -203,6 +209,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash_relation!
   active_model_serializers (= 0.9.3)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
