@@ -18,6 +18,12 @@ public typealias Str2Str2StrMap = [String:Str2StrMap];
 
 
 
+/*  ----------------------------------------------------------------------------------
+ 
+ 
+ 
+    ----------------------------------------------------------------------------------
+ */
 public class SecondViewController: UIViewController, UITextFieldDelegate, GameClient
 {
     @IBOutlet weak var latitude: UILabel!
@@ -37,6 +43,12 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
 
     }
 
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     override public func viewDidLoad() {
         
         game = Game(theClient: self)
@@ -57,6 +69,12 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         game!.setupMap("Peter", theMapView: mapView)
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func batchUpdate()  {
         /*
         print("Batch update here. Size of queue is " + String(format:"%d", entries.count))
@@ -68,10 +86,22 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
          */
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     public func userMovedToLatLng(lat: Float, lng: Float) {
         
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     public func userMovedTo(latestLocation: CLLocation) {
         /* entries["player"] = [
          "name" : "PETER",
@@ -92,6 +122,12 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         verticalAccuracy.text   = String(format: "VACC: %.4f", latestLocation.verticalAccuracy)
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     @IBAction func trackingButtonPressed(sender: AnyObject) {
 
         if (name.text! == "") {
@@ -127,11 +163,23 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         return String(format: "%1.6f", dbl)
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     public func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true);
         return false;

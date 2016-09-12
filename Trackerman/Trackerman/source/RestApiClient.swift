@@ -16,15 +16,25 @@ public enum RestError: ErrorType {
     case OutOfStock
 }
 
+/*  ----------------------------------------------------------------------------------
+ 
+ 
+ 
+    ----------------------------------------------------------------------------------
+ */
 class RestApiClient: NSObject {
     static let sharedInstance = RestApiClient()
 
-    
-    
     // let baseURL = "http://api.randomuser.me/"
     let baseURL = "http://valbo.dnsalias.com:9999/get_users"
     let getTreasuresURL = "http://valbo.dnsalias.com:9999/get_treasures_within"
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func getRandomUser(onCompletion: (JSON) -> Void) {
         let route = baseURL
         makeHTTPGetRequest(route, onCompletion: { json, err in
@@ -32,6 +42,12 @@ class RestApiClient: NSObject {
         })
     }
 
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func getTreasures(
         lat: Double,
         lng: Double,
@@ -43,6 +59,12 @@ class RestApiClient: NSObject {
         })
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         
@@ -55,7 +77,12 @@ class RestApiClient: NSObject {
         task.resume()
     }
     
-    
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func HTTPPostJSON(url: String,  data: NSData, callback: (String, String?) -> Void) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
@@ -66,6 +93,12 @@ class RestApiClient: NSObject {
         HTTPsendRequest(request, callback: callback)
     }
     
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func HTTPsendRequest(request: NSMutableURLRequest, callback: (String, String?) -> Void) {
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             
@@ -82,7 +115,12 @@ class RestApiClient: NSObject {
         task.resume()
     }
 
-    
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func debugEntries(entries : [String : [String : String]]) {
         let reqNSData:NSData?
         do {
@@ -96,7 +134,12 @@ class RestApiClient: NSObject {
         }
     }
     
-    
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
     func saveEntries(entries : Str2Dict2Dict) {
 
          let reqNSData:NSData?
