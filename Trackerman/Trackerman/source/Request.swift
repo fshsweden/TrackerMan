@@ -22,11 +22,19 @@ class Request {
     
     // PUT METHOD
     func post(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+        
+        let str = "fshsweden@hotmail.com:wowu812"
+        let utf8str = str.dataUsingEncoding(NSUTF8StringEncoding)
+
+        let base64Encoded = utf8str!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        print("Encoded:  \(base64Encoded)")
+
         let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
         
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Basic " + base64Encoded, forHTTPHeaderField: "Authorization")
         do {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
         } catch {
