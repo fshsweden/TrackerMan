@@ -1,6 +1,6 @@
 class Api::V1::ZoneSerializer < Api::V1::BaseSerializer
 
-  attributes :id, :name,  area_id, :json_points, :created_at, :updated_at
+  attributes :id, :name,  :json_points, :created_at, :updated_at
 
   #has_many :microposts
   #has_many :following

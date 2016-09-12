@@ -17,16 +17,28 @@ class Api::V1::BaseController < ActionController::Base
 	protected
 
 	def authenticate_user!
-		token, options = ActionController::HttpAuthentication::Token.token_and_options(request)
 
-		user_email = options.blank?? nil : options[:email]
-		user = user_email && User.find_by(email: user_email)
+		# Basic Authentication, takes
+		#
+		#
+		#
 
-		if user && ActiveSupport::SecurityUtils.secure_compare(user.token, token)
-			@current_user = user
-		else
-			return unauthenticated!
+		# token, options = ActionController::HttpAuthentication::Token.token_and_options(request)
+
+		puts "AUTH starting"
+		authenticate_with_http_basic do |user_email, pass|
+			puts "user_email #{user_email} pass=#{pass}"
+			if user_email == "fshsweden@hotmail.com" && pass == "wowu812"
+				@current_user = User.find_by(email: user_email)
+				if @current_user == nil
+					return unauthenticated!
+				end
+			else
+				return unauthenticated!
+			end
 		end
+		puts "AUTH done"
+
 	end
 
 	def not_found

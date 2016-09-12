@@ -235,42 +235,45 @@
       <mandatory>1</mandatory>
       <data-type>DATETIME(0,-1)|12</data-type>
     </column>
-    <index id="74" parent="10" name="index_users_on_email">
+    <column id="74" parent="10" name="token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <index id="75" parent="10" name="index_users_on_email">
       <columns>email</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <index id="75" parent="10" name="index_users_on_reset_password_token">
+    <index id="76" parent="10" name="index_users_on_reset_password_token">
       <columns>reset_password_token</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="76" parent="10">
+    <key id="77" parent="10">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="77" parent="11" name="id">
+    <column id="78" parent="11" name="id">
       <mandatory>1</mandatory>
       <data-type>INTEGER(0,-1)|4</data-type>
     </column>
-    <column id="78" parent="11" name="name">
+    <column id="79" parent="11" name="name">
       <data-type>VARCHAR(0,-1)|12</data-type>
     </column>
-    <column id="79" parent="11" name="created_at">
+    <column id="80" parent="11" name="created_at">
       <mandatory>1</mandatory>
       <data-type>DATETIME(0,-1)|12</data-type>
     </column>
-    <column id="80" parent="11" name="updated_at">
+    <column id="81" parent="11" name="updated_at">
       <mandatory>1</mandatory>
       <data-type>DATETIME(0,-1)|12</data-type>
     </column>
-    <column id="81" parent="11" name="area_id">
+    <column id="82" parent="11" name="area_id">
       <data-type>INTEGER(0,-1)|4</data-type>
     </column>
-    <column id="82" parent="11" name="json_points">
+    <column id="83" parent="11" name="json_points">
       <data-type>TEXT(0,-1)|12</data-type>
     </column>
-    <key id="83" parent="11">
+    <key id="84" parent="11">
       <columns>id</columns>
       <primary>1</primary>
     </key>

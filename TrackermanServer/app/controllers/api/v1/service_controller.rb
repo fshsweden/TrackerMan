@@ -23,7 +23,7 @@ class Api::V1::ServiceController < Api::V1::BaseController
 
 	def get_zones
 		@zones = Zone.all
-		render json: @players, each_serializer: ZoneSerializer, root: "zone"
+		render json: @zones, each_serializer: Api::V1::ZoneSerializer, root: "zone"
 	end
 
 	# GET
