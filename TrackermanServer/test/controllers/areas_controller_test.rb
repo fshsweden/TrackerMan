@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class AreasControllerTest < ActionController::TestCase
+
+  include Devise::Test::ControllerHelpers
+
   setup do
     @area = areas(:one)
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    #sign_in FactoryGirl.create(:admin)
+    sign_in users(:fshsweden)
   end
 
   test "should get index" do
@@ -40,10 +46,15 @@ class AreasControllerTest < ActionController::TestCase
   end
 
   test "should destroy area" do
+
+    puts "TEST area controller destroy start"
+
     assert_difference('Area.count', -1) do
       delete :destroy, id: @area
     end
+    puts "TEST area controller destroy middle"
 
     assert_redirected_to areas_path
+    puts "TEST area controller destroy end"
   end
 end

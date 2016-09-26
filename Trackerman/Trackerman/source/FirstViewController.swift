@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         // 4) Set location of the map: Fuengirola - Malaga 36.5417° N, 4.6250° W
         // FirstViewController.setMapLocation(mapView: mapView, latitude: 36.548628, longitud: -4.6307649)
      
-        let uuid = NSUserDefaults.standardUserDefaults().valueForKey("ApplicationIdentifier")!
+        let uuid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         
         // startLocationServices()
         // createPlayer()
@@ -37,7 +37,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    static func setMapLocation(mapView mapView: MKMapView, latitude: CLLocationDegrees, longitud: CLLocationDegrees, zoom: Double = 1){
+    static func setMapLocation(mapView: MKMapView, latitude: CLLocationDegrees, longitud: CLLocationDegrees, zoom: Double = 1){
         
         // define the map zoom span
         let latitudZoomLevel : CLLocationDegrees = zoom

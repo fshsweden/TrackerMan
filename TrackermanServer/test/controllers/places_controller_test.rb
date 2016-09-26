@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class PlacesControllerTest < ActionController::TestCase
+
+  include Devise::Test::ControllerHelpers
+
   setup do
     @place = places(:one)
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    #sign_in FactoryGirl.create(:admin)
+    sign_in users(:fshsweden)
+
   end
 
   test "should get index" do

@@ -150,7 +150,7 @@ class Api::V1::ServiceController < Api::V1::BaseController
 	end
 
 	def player_params_2
-		params.require(:player).permit(:name, :lat, :lng)
+		params.require(:players).permit(:name, :lat, :lng)
 	end
 
 	def position_params

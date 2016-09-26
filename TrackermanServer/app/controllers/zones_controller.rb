@@ -5,11 +5,11 @@ class ZonesController < ApplicationController
   # GET /zones.json
   def index
     @zones = Zone.all
-
     puts @zones.to_json
 
     gon.zones = []
     @zones.each do |z|
+      puts "START:" + z.json_points + ":END"
       gon.zones.push JSON.parse(z.json_points)     # json string
     end
 
@@ -37,13 +37,18 @@ class ZonesController < ApplicationController
   # POST /zones
   # POST /zones.json
   def create
+
+    puts "PARAMS=" + zone_params.to_s
+
     @zone = Zone.new(zone_params)
 
     respond_to do |format|
       if @zone.save
+        puts "----------- SAVE OK ------------------"
         format.html { redirect_to @zone, notice: 'Zone was successfully created.' }
         format.json { render :show, status: :created, location: @zone }
       else
+        puts "----------- ERROR ------------------"
         format.html { render :new }
         format.json { render json: @zone.errors, status: :unprocessable_entity }
       end
@@ -69,11 +74,14 @@ class ZonesController < ApplicationController
   # DELETE /zones/1
   # DELETE /zones/1.json
   def destroy
+
+	  puts "controller destroy here!"
     @zone.destroy
     respond_to do |format|
       format.html { redirect_to zones_url, notice: 'Zone was successfully destroyed.' }
       format.json { head :no_content }
     end
+	  puts "controller destroy finished here!"
   end
 
   private

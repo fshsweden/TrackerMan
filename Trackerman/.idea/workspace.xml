@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="01dbecf9-c355-42e9-911d-83d74b6d24a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/TrackermanServer" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/borders_controller_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/controls_controller_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/tracks_controller_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/borders.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/controls.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/tracks.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/border_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/control_test.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/track_test.rb" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/player_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/players_controller.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../TrackermanServer/app/views/player/index.html.erb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/views/players/index.html.erb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../TrackermanServer/app/views/player/show.html.erb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/views/players/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman.xcworkspace/xcuserdata/peterandersson.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trackerman.xcworkspace/xcuserdata/peterandersson.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Trackerman.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Trackerman/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/GameProtocol.swift" afterPath="$PROJECT_DIR$/Trackerman/GameProtocol.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/AppDelegate.swift" afterPath="$PROJECT_DIR$/Trackerman/source/AppDelegate.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/FirstViewController.swift" afterPath="$PROJECT_DIR$/Trackerman/source/FirstViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/Game.swift" afterPath="$PROJECT_DIR$/Trackerman/source/Game.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/LocationEntry.swift" afterPath="$PROJECT_DIR$/Trackerman/source/LocationEntry.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/LocationManager.swift" afterPath="$PROJECT_DIR$/Trackerman/source/LocationManager.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/MapViewController.swift" afterPath="$PROJECT_DIR$/Trackerman/source/MapViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/Request.swift" afterPath="$PROJECT_DIR$/Trackerman/source/Request.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/RestApiClient.swift" afterPath="$PROJECT_DIR$/Trackerman/source/RestApiClient.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/SecondViewController.swift" afterPath="$PROJECT_DIR$/Trackerman/source/SecondViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trackerman/source/SwiftyJSON.swift" afterPath="$PROJECT_DIR$/Trackerman/source/SwiftyJSON.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrackermanTests/TrackermanTests.swift" afterPath="$PROJECT_DIR$/TrackermanTests/TrackermanTests.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/.idea/TrackermanServer.iml" afterPath="$PROJECT_DIR$/../TrackermanServer/.idea/TrackermanServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TrackermanServer/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/Gemfile" afterPath="$PROJECT_DIR$/../TrackermanServer/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/Gemfile.lock" afterPath="$PROJECT_DIR$/../TrackermanServer/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/api/v1/service_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/api/v1/service_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/areas_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/areas_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/treasures_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/treasures_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/controllers/zones_controller.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/controllers/zones_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/area.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/area.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/place.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/place.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/player.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/player.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/polygon.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/polygon.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/position.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/position.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/treasure.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/treasure.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/user.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/app/models/zone.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/app/models/zone.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/config/routes.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/areas_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/areas_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/home_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/home_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/places_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/places_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/service_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/service_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/treasures_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/treasures_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/controllers/zones_controller_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/controllers/zones_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/areas.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/areas.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/places.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/places.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/players.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/players.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/positions.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/positions.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/treasures.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/treasures.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/users.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/users.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/zones.yml" afterPath="$PROJECT_DIR$/../TrackermanServer/test/fixtures/zones.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/area_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/area_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/place_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/place_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/player_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/player_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/position_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/position_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/treasure_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/treasure_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/user_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/user_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/models/zone_test.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/models/zone_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrackermanServer/test/test_helper.rb" afterPath="$PROJECT_DIR$/../TrackermanServer/test/test_helper.rb" />
+    </list>
+    <ignored path="Trackerman.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="FavoritesManager">
+    <favorites_list name="Trackerman" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trackerman/source/AppDelegate.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Trackerman/source/Game.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Trackerman/source/Game.swift" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2560" />
+    <option name="height" value="1413" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Cidr.FilesView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ViewControllers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Network" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Location" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trackerman" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RunManager" selected="Application.Trackerman">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trackerman" TARGET_NAME="Trackerman" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Trackerman" RUN_TARGET_NAME="Trackerman" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trackerman" TARGET_NAME="Trackerman" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trackerman" TARGET_NAME="TrackermanTests" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Trackerman" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trackerman" TARGET_NAME="Trackerman" CONFIG_NAME="Debug" SCHEME_NAME="Trackerman" RUN_TARGET_PROJECT_NAME="Trackerman" RUN_TARGET_NAME="Trackerman" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-Trackerman" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="Pods-Trackerman" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Trackerman" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-TrackermanTests" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="Pods-TrackermanTests" CONFIG_NAME="Debug" SCHEME_NAME="Pods-TrackermanTests" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-TrackermanUITests" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="Pods-TrackermanUITests" CONFIG_NAME="Debug" SCHEME_NAME="Pods-TrackermanUITests" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Application.Trackerman" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pods-Trackerman" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-TrackermanTests" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-TrackermanUITests" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01dbecf9-c355-42e9-911d-83d74b6d24a0" name="Default" comment="" />
+      <created>1474039393939</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1474039393939</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Trackerman/source/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trackerman/source/Game.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trackerman/source/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trackerman/source/Game.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

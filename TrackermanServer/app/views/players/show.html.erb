@@ -1,0 +1,16 @@
+<h1>Showing <%=@player.name%> here </h1>
+
+<%= link_to @player.name %>
+
+<% t = Treasure.first %>
+
+<% @player.positions.each do |x| %>
+	<% if x != nil %>
+		<li><%= local_time(x.created_at,  format: '%Y-%m-%d  %H:%M:%S', class: 'my-time') %> LAT:<%= x.lat %> LONG:<%= x.lng %></li>
+
+
+
+
+	<% end %>
+<% end %>
+

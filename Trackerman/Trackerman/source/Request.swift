@@ -9,65 +9,65 @@
 import Foundation
 
 class Request {
-    let session: NSURLSession = NSURLSession.sharedSession()
+    let session: URLSession = URLSession.shared
     
     // GET METHOD
-    func get(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func get(_ url: URL, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
         
-        request.HTTPMethod = "GET"
+        request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
     
     // PUT METHOD
-    func post(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+    func post(_ url: URL, body: NSMutableDictionary, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
         
         let str = "fshsweden@hotmail.com:wowu812"
-        let utf8str = str.dataUsingEncoding(NSUTF8StringEncoding)
+        let utf8str = str.data(using: String.Encoding.utf8)
 
-        let base64Encoded = utf8str!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        let base64Encoded = utf8str!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         print("Encoded:  \(base64Encoded)")
 
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
         
-        request.HTTPMethod = "POST"
+        request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("Basic " + base64Encoded, forHTTPHeaderField: "Authorization")
         do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.init(rawValue: 2))
         } catch {
             // Error Handling
             print("NSJSONSerialization Error")
             return
         }
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
     
     // POST METHOD
-    func put(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func put(_ url: URL, body: NSMutableDictionary, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
         
-        request.HTTPMethod = "PUT"
+        request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.init(rawValue: 2))
         } catch {
             // Error Handling
             print("NSJSONSerialization Error")
             return
         }
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
     
     // DELETE METHOD
-    func delete(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func delete(_ url: URL, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
         
-        request.HTTPMethod = "DELETE"
+        request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
 }

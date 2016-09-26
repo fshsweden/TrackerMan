@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class TreasuresControllerTest < ActionController::TestCase
+
+  include Devise::Test::ControllerHelpers
+
   setup do
     @treasure = treasures(:one)
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    #sign_in FactoryGirl.create(:admin)
+    sign_in users(:fshsweden)
+
   end
 
   test "should get index" do
@@ -41,8 +48,12 @@ class TreasuresControllerTest < ActionController::TestCase
 
   test "should destroy treasure" do
     assert_difference('Treasure.count', -1) do
+      puts "calling destroy"
       delete :destroy, id: @treasure
+      puts "called destroy"
     end
+
+    puts "destroy - redirect"
 
     assert_redirected_to treasures_path
   end

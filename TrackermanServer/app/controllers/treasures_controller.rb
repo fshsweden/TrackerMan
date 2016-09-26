@@ -43,7 +43,7 @@ class TreasuresController < ApplicationController
         format.html { redirect_to @treasure, notice: 'Treasure was successfully created.' }
         format.json { render :show, status: :created, location: @treasure }
 
-		broadcast @treasure, "created"
+		#broadcast @treasure, "created"
       else
         format.html { render :new }
         format.json { render json: @treasure.errors, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class TreasuresController < ApplicationController
         format.html { redirect_to @treasure, notice: 'Treasure was successfully updated.' }
         format.json { render :show, status: :ok, location: @treasure }
 
-        broadcast @treasure, "updated"
+        #broadcast @treasure, "updated"
       else
         format.html { render :edit }
         format.json { render json: @treasure.errors, status: :unprocessable_entity }

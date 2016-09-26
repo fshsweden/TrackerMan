@@ -1,13 +1,27 @@
+# == Schema Information
+#
+# Table name: places
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  lat        :integer
+#  lng        :integer
+#  value      :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  lat: 1
-  lng: 1
+  name: Place1
+  lat: 55.00
+  lng: 19.00
   value: 1
 
 two:
-  name: MyString
-  lat: 1
-  lng: 1
+  name: Place2
+  lat: 55.10
+  lng: 19.10
   value: 1
+

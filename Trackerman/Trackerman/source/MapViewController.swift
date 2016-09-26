@@ -17,7 +17,7 @@ class MapviewController : UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(_ location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(
             location.coordinate,
             regionRadius * 2.0,
@@ -41,7 +41,7 @@ class MapviewController : UIViewController, CLLocationManagerDelegate {
         
     }
     
-    @IBAction func locateMe(sender: UIBarButtonItem) {
+    @IBAction func locateMe(_ sender: UIBarButtonItem) {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -51,7 +51,7 @@ class MapviewController : UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let userLocation:CLLocation = locations[0] as CLLocation
         

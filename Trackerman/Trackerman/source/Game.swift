@@ -11,7 +11,7 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class Game : NSObject, CLLocationManagerDelegate {
+class MyGame: NSObject, CLLocationManagerDelegate {
     
     var audioPlayer = AVAudioPlayer()
     
@@ -32,7 +32,7 @@ class Game : NSObject, CLLocationManagerDelegate {
     var client: GameClient
     var mapView: MKMapView? = nil
     
-    let formatter = NSDateFormatter()
+    let formatter = DateFormatter()
     
     /*  -----------------------------------------------------------------------------------------------
      
@@ -49,9 +49,9 @@ class Game : NSObject, CLLocationManagerDelegate {
         formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         // setup sound
-        if let soundPath  = NSBundle.mainBundle().URLForResource("coin-drop-2", withExtension: "wav") {
+        if let soundPath  = Bundle.main.url(forResource: "coin-drop-2", withExtension: "wav") {
             do {
-                audioPlayer = try AVAudioPlayer(contentsOfURL: soundPath)
+                audioPlayer = try AVAudioPlayer(contentsOf: soundPath)
                 audioPlayer.prepareToPlay()
             } catch {
                 print("No sound found by URL:\(soundPath)")
@@ -87,12 +87,20 @@ class Game : NSObject, CLLocationManagerDelegate {
         
         setupLocationHandler()
     }
+    
+    func getEntries() -> Str2Dict2Dict {
+        return entries
+    }
+    
+    func clearEntries() {
+        entries = [:]
+    }
 
     /*  ----------------------------------------------------------------------------------
      
         ----------------------------------------------------------------------------------
      */
-    func setupMap(theName:String, theMapView: MKMapView) {
+    func setupMap(_ theName:String, theMapView: MKMapView) {
         name = theName
         mapView = theMapView
         centerMapOnLocation2(lat, longitude: lng)
@@ -139,7 +147,7 @@ class Game : NSObject, CLLocationManagerDelegate {
      
         ----------------------------------------------------------------------------------
      */
-    func checkMatchAgainstPoint(name: String, newloc : CLLocation) -> Bool {
+    func checkMatchAgainstPoint(_ name: String, newloc : CLLocation) -> Bool {
         
         if let points : LatLongPointsArray = data[name] {
             for p in points {
@@ -158,15 +166,15 @@ class Game : NSObject, CLLocationManagerDelegate {
      
         ----------------------------------------------------------------------------------
      */
-    func distance(pt1 : CLLocation,pt2: CLLocation) -> Double {
-        return pt2.distanceFromLocation(pt1);
+    func distance(_ pt1 : CLLocation,pt2: CLLocation) -> Double {
+        return pt2.distance(from: pt1);
     }
  
     /*  ----------------------------------------------------------------------------------
      
         ----------------------------------------------------------------------------------
      */
-    internal func locationManager(manager: CLLocationManager,  didUpdateLocations locations: [CLLocation])
+    internal func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation])
     {
         print ("didUpdateLocations!")
         
@@ -185,7 +193,7 @@ class Game : NSObject, CLLocationManagerDelegate {
         
         for loc in locations {
             
-            let stringDate: String = formatter.stringFromDate(loc.timestamp)
+            let stringDate: String = formatter.string(from: loc.timestamp)
             
             let  entry : [String:String] = [
                 "name"      : name,
@@ -218,7 +226,7 @@ class Game : NSObject, CLLocationManagerDelegate {
      
         ----------------------------------------------------------------------------------
      */
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("LOCATION ERROR");
         print(error)
     }
@@ -227,7 +235,7 @@ class Game : NSObject, CLLocationManagerDelegate {
      
         ----------------------------------------------------------------------------------
      */
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(_ location: CLLocation) {
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(
             location.coordinate,
@@ -243,7 +251,7 @@ class Game : NSObject, CLLocationManagerDelegate {
      
         ----------------------------------------------------------------------------------
      */
-    func centerMapOnLocation2(latitude: Double, longitude: Double) {
+    func centerMapOnLocation2(_ latitude: Double, longitude: Double) {
         if (mapView != nil) {
             mapView!.showsUserLocation = true
             let span = MKCoordinateSpanMake(0.0030, 0.0030)

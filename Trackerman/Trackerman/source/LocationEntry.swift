@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class LocationEntry {
+open class LocationEntry {
     
-    public var ts: String
-    public var lat: Double
-    public var lng: Double
-    public var altitude: Double
-    public var horizAcc: Double
-    public var verticAcc: Double
+    open var ts: String
+    open var lat: Double
+    open var lng: Double
+    open var altitude: Double
+    open var horizAcc: Double
+    open var verticAcc: Double
     
     init (ts: String, lat: Double, lng: Double, altitude:Double, horizAcc:Double, verticAcc:Double) {
         self.ts = ts

@@ -1,8 +1,16 @@
 require 'test_helper'
 
 class ZonesControllerTest < ActionController::TestCase
+
+  include Devise::Test::ControllerHelpers
+
   setup do
-    @zone = zones(:one)
+    @zone1 = zones(:one)
+    @zone2 = zones(:one)
+
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    #sign_in FactoryGirl.create(:admin)
+    sign_in users(:fshsweden)
   end
 
   test "should get index" do
@@ -17,33 +25,17 @@ class ZonesControllerTest < ActionController::TestCase
   end
 
   test "should create zone" do
+
+    puts "1"
+
     assert_difference('Zone.count') do
-      post :create, zone: { name: @zone.name }
+      puts "2"
+      post :create, zone: { name: @zone1.name }
+      puts "33333"
     end
 
+    puts "3"
     assert_redirected_to zone_path(assigns(:zone))
   end
 
-  test "should show zone" do
-    get :show, id: @zone
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @zone
-    assert_response :success
-  end
-
-  test "should update zone" do
-    patch :update, id: @zone, zone: { name: @zone.name }
-    assert_redirected_to zone_path(assigns(:zone))
-  end
-
-  test "should destroy zone" do
-    assert_difference('Zone.count', -1) do
-      delete :destroy, id: @zone
-    end
-
-    assert_redirected_to zones_path
-  end
 end

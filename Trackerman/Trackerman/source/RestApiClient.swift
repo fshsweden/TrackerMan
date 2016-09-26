@@ -10,10 +10,10 @@ import Foundation
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-public enum RestError: ErrorType {
-    case InvalidSelection
-    case InsufficientFunds(coinsNeeded: Int)
-    case OutOfStock
+public enum RestError: Error {
+    case invalidSelection
+    case insufficientFunds(coinsNeeded: Int)
+    case outOfStock
 }
 
 /*  ----------------------------------------------------------------------------------
@@ -25,9 +25,10 @@ public enum RestError: ErrorType {
 class RestApiClient: NSObject {
     static let sharedInstance = RestApiClient()
 
-    // let baseURL = "http://api.randomuser.me/"
-    let baseURL = "http://valbo.dnsalias.com:9999/get_users"
-    let getTreasuresURL = "http://valbo.dnsalias.com:9999/get_treasures_within"
+    let getRandomUserURL        = "http://api.randomuser.me/"
+    let getUsersURL             = "http://valbo.dnsalias.com:9999/get_users"
+    let getZonesURL             = "http://valbo.dnsalias.com:9999/get_zones"
+    let getTreasuresWithinURL   = "http://valbo.dnsalias.com:9999/get_treasures_within"
     
     /*  ----------------------------------------------------------------------------------
      
@@ -35,9 +36,9 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func getRandomUser(onCompletion: (JSON) -> Void) {
-        let route = baseURL
-        makeHTTPGetRequest(route, onCompletion: { json, err in
+    func getRandomUser(_ onCompletion: @escaping (JSON) -> Void) {
+        let route = getRandomUserURL
+        makeHTTPGetRequest(route, user: "fshsweden@hotmail.com", password:"wowu812", onCompletion: { json, err in
             onCompletion(json as JSON)
         })
     }
@@ -49,15 +50,20 @@ class RestApiClient: NSObject {
         ----------------------------------------------------------------------------------
      */
     func getTreasures(
-        lat: Double,
+        _ lat: Double,
         lng: Double,
         maxdist : Double,
-        onCompletion: (JSON) -> Void) {
-        let route = getTreasuresURL + "?lat=\(lat);lng=\(lng);maxdist=\(maxdist)";
-        makeHTTPGetRequest(route, onCompletion: { json, err in
+        onCompletion: @escaping (JSON) -> Void) {
+        let route = getTreasuresWithinURL + "?lat=\(lat);lng=\(lng);maxdist=\(maxdist)";
+        makeHTTPGetRequest(route, user: "fshsweden@hotmail.com", password:"wowu812", onCompletion: { json, err in
             onCompletion(json as JSON)
         })
     }
+    
+    
+    
+    
+    
     
     /*  ----------------------------------------------------------------------------------
      
@@ -65,12 +71,10 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-        
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+    func makeHTTPGetRequest(_ path: String, user:String, password:String, onCompletion: @escaping ServiceResponse) {
+        let request = NSMutableURLRequest(url: URL(string: path)!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             let json:JSON = JSON(data: data!)
             onCompletion(json, error)
         })
@@ -83,14 +87,33 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func HTTPPostJSON(url: String,  data: NSData, callback: (String, String?) -> Void) {
+    func HTTPPostJSON(_ url: String,  user:String, password:String, data: Data, callback: @escaping (String, String?) -> Void) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        request.HTTPMethod = "POST"
+        let request = NSMutableURLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
         request.addValue("application/json",forHTTPHeaderField: "Content-Type")
         request.addValue("application/json",forHTTPHeaderField: "Accept")
-        request.HTTPBody = data
-        HTTPsendRequest(request, callback: callback)
+
+        let str = "\(user):\(password)"
+        
+        // UTF 8 str from original
+        // NSData! type returned (optional)
+        let utf8str = str.data(using: String.Encoding.utf8)
+        
+        // Base64 encode UTF 8 string
+        // fromRaw(0) is equivalent to objc 'base64EncodedStringWithOptions:0'
+        // Notice the unwrapping given the NSData! optional
+        // NSString! returned (optional)
+        let base64Encoded = utf8str!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        print("Email:  \(user)")
+        print("Passwd:  \(password)")
+        print("Encoded:  \(base64Encoded)")
+        print("Result: Basic \(base64Encoded)")
+        
+        request.setValue("Basic \(base64Encoded)",forHTTPHeaderField: "Authorization")
+        
+        request.httpBody = data
+        HTTPsendRequest(request, base64EncodedCredential: base64Encoded, callback: callback)
     }
     
     /*  ----------------------------------------------------------------------------------
@@ -99,18 +122,23 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func HTTPsendRequest(request: NSMutableURLRequest, callback: (String, String?) -> Void) {
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            
+    func HTTPsendRequest(_ request: NSMutableURLRequest, base64EncodedCredential: String, callback: @escaping (String, String?) -> Void) {
+        
+        let config = URLSessionConfiguration.default
+        let authString = "Basic \(base64EncodedCredential)"
+        config.httpAdditionalHeaders = ["Authorization" : authString]
+        let session = URLSession(configuration: config)
+        
+        // let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        let task = session.dataTask(with: request, completionHandler: {
                 (data, response, error) -> Void in
-            
                 if (error != nil) {
                     callback("Error", error!.localizedDescription)
                 } else {
                     callback(NSString(data: data!,
-                        encoding: NSUTF8StringEncoding)! as String, nil)
+                        encoding: String.Encoding.utf8)! as String, nil)
                 }
-        }
+        }) 
         
         task.resume()
     }
@@ -121,11 +149,11 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func debugEntries(entries : [String : [String : String]]) {
-        let reqNSData:NSData?
+    func debugEntries(_ entries : [String : [String : String]]) {
+        let reqNSData:Data?
         do {
-            try reqNSData = NSJSONSerialization.dataWithJSONObject(entries, options: NSJSONWritingOptions.PrettyPrinted)
-            let string2 = NSString(data: reqNSData!, encoding: NSUTF8StringEncoding)
+            try reqNSData = JSONSerialization.data(withJSONObject: entries, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let string2 = NSString(data: reqNSData!, encoding: String.Encoding.utf8.rawValue)
             print(string2)  // Optional
             print(string2!) // Unwrapped
         }
@@ -140,18 +168,18 @@ class RestApiClient: NSObject {
      
         ----------------------------------------------------------------------------------
      */
-    func saveEntries(entries : Str2Dict2Dict) {
+    func saveEntries(_ entries : Str2Dict2Dict) {
 
-         let reqNSData:NSData?
+         let reqNSData:Data?
          do {
-            try reqNSData = NSJSONSerialization.dataWithJSONObject(entries, options: NSJSONWritingOptions.PrettyPrinted)
+            try reqNSData = JSONSerialization.data(withJSONObject: entries, options: JSONSerialization.WritingOptions.prettyPrinted)
    
             // Debug printout
             /* let string2 = NSString(data: reqNSData!, encoding: NSUTF8StringEncoding)
             print(string2)  // Optional
             print(string2!) // Unwrapped */
             
-            HTTPPostJSON("http://valbo.dnsalias.com:9999/api/add_pos", data: reqNSData!) {
+            HTTPPostJSON("http://valbo.dnsalias.com:9999/api/v1/add_pos", user: "fshsweden@hotmail.com", password:"wowu812", data: reqNSData!) {
                 (response, error) -> Void in
                 if error != nil{
                     print("Error returned was: \(response) \(error)");

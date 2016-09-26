@@ -24,7 +24,7 @@ public typealias Str2Str2StrMap = [String:Str2StrMap];
  
     ----------------------------------------------------------------------------------
  */
-public class SecondViewController: UIViewController, UITextFieldDelegate, GameClient
+open class SecondViewController: UIViewController, UITextFieldDelegate, GameClient
 {
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
@@ -36,10 +36,10 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
     @IBOutlet weak var mapView: MKMapView!
 
     var tracking : Bool = false
-    var timer = NSTimer()
-    var game : Game?
+    var timer = Timer()
+    var game : MyGame?
     
-    @IBAction func onInput(sender: AnyObject) {
+    @IBAction func onInput(_ sender: AnyObject) {
 
     }
 
@@ -49,20 +49,21 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
      
         ----------------------------------------------------------------------------------
      */
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         
-        game = Game(theClient: self)
+        game = MyGame(theClient: self)
 
         super.viewDidLoad()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(
-            15.0,
+        name.text = "Peter"
+        timer = Timer.scheduledTimer(
+            timeInterval: 15.0,
             target: self,
             selector: #selector(batchUpdate),
             userInfo: nil,
             repeats: true)
 
-        mapView.mapType = MKMapType.Satellite
+        mapView.mapType = MKMapType.satellite
         
         name.delegate = self
         
@@ -76,33 +77,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
         ----------------------------------------------------------------------------------
      */
     func batchUpdate()  {
-        /*
-        print("Batch update here. Size of queue is " + String(format:"%d", entries.count))
-        if (entries.count > 0) {
-            RestApiClient.sharedInstance.saveEntries(entries)
-            //RestApiClient.sharedInstance.debugEntries(entries)
-        }
-        entries.removeAll()
-         */
-    }
-    
-    /*  ----------------------------------------------------------------------------------
-     
-     
-     
-        ----------------------------------------------------------------------------------
-     */
-    public func userMovedToLatLng(lat: Float, lng: Float) {
         
-    }
-    
-    /*  ----------------------------------------------------------------------------------
-     
-     
-     
-        ----------------------------------------------------------------------------------
-     */
-    public func userMovedTo(latestLocation: CLLocation) {
         /* entries["player"] = [
          "name" : "PETER",
          "positions" : [
@@ -114,6 +89,35 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
          ]
          ]
          */
+        
+        let entries = game!.getEntries()
+        print("Batch update here. Size of queue is " + String(format:"%d", entries.count))
+        if (entries.count > 0) {
+            RestApiClient.sharedInstance.saveEntries(entries)
+            //RestApiClient.sharedInstance.debugEntries(entries)
+        }
+        game!.clearEntries()
+    }
+    
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
+    open func userMovedToLatLng(_ lat: Float, lng: Float) {
+        /* callback from Game, do something useful */
+    }
+    
+    /*  ----------------------------------------------------------------------------------
+     
+     
+     
+        ----------------------------------------------------------------------------------
+     */
+    open func userMovedTo(_ latestLocation: CLLocation) {
+        
+        /* callback from Game, do something useful */
         
         latitude.text           = String(format: "LAT : %.4f", latestLocation.coordinate.latitude)
         longitude.text          = String(format: "LNG : %.4f", latestLocation.coordinate.longitude)
@@ -128,7 +132,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
      
         ----------------------------------------------------------------------------------
      */
-    @IBAction func trackingButtonPressed(sender: AnyObject) {
+    @IBAction func trackingButtonPressed(_ sender: AnyObject) {
 
         if (name.text! == "") {
             print("No name given!!")
@@ -139,15 +143,17 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
             if (!tracking) {
                 trackingButton.setTitle(
                     String(format:"Stop Tracking %@", name.text!),
-                    forState: .Normal)
+                    for: UIControlState())
                 
                 game!.startTracking();
+                self.view.endEditing(true);
             }
             else {
                 trackingButton.setTitle(
                     String(format:"Start Tracking %@", name.text!),
-                    forState: .Normal)
+                    for: UIControlState())
                 game!.stopTracking();
+                self.view.endEditing(true);
             }
             tracking = !tracking
         }
@@ -159,7 +165,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
     //    the delegate for the location manager in the viewDidLoad method, it is
     //    necessary to now implement this method in the ViewController.swift file:
     
-    func dbl2str(dbl : Double) -> String {
+    func dbl2str(_ dbl : Double) -> String {
         return String(format: "%1.6f", dbl)
     }
     
@@ -169,7 +175,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
      
         ----------------------------------------------------------------------------------
      */
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -180,7 +186,7 @@ public class SecondViewController: UIViewController, UITextFieldDelegate, GameCl
      
         ----------------------------------------------------------------------------------
      */
-    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true);
         return false;
     }

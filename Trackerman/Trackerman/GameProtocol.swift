@@ -11,6 +11,6 @@ import CoreLocation
 
 public protocol GameClient {
    
-    func userMovedToLatLng(lat: Float, lng: Float)
-    func userMovedTo(last:CLLocation)
+    func userMovedToLatLng(_ lat: Float, lng: Float)
+    func userMovedTo(_ last:CLLocation)
 }

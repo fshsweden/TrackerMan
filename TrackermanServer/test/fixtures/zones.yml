@@ -1,7 +1,46 @@
+# == Schema Information
+#
+# Table name: zones
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  area_id     :integer
+#  json_points :text
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-
 two:
-  name: MyString
+  name: Zone1
+  area_id: 1
+  json_points: "[{\"lat\": 77.11,\"lng\": 88.22}]"
+
+#    - lat:60.6462675754136
+#      lng:17.00186412781477
+#    - lat:60.64501584337051
+#      lng:16.999772004783154
+#    - lat:60.64392185286142
+#      lng:17.002185992896557
+#    - lat:60.64524200023761
+#      lng:17.004514150321484
+
+
+one:
+  name: Zone2
+  area_id: 2
+  json_points: "[{\"lat\": 77.11,\"lng\": 88.22}]"
+
+#  json_points: ["ABC"]
+
+#    - lat:60.63594853852186
+#      lng:16.988708479329944
+#    - lat:60.63605375755593
+#      lng:16.988818449899554
+#    - lat:60.635945908041585
+#      lng:16.989226145669818
+#    - lat:60.635835427677165
+#      lng:16.989097399637103
+
+
